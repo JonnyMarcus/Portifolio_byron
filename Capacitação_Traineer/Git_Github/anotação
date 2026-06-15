@@ -1,0 +1,335 @@
+# 📝 Anotações — Git & GitHub
+
+## 📖 O que é Git?
+
+O Git é um sistema de controle de versão distribuído criado por Linus Torvalds em 2005.
+
+Seu objetivo é registrar e controlar alterações realizadas em arquivos ao longo do tempo, permitindo que diferentes desenvolvedores trabalhem simultaneamente em um mesmo projeto sem perder o histórico das modificações.
+
+### Principais vantagens
+
+- Controle de versões;
+- Histórico completo das alterações;
+- Trabalho em equipe;
+- Recuperação de versões anteriores;
+- Organização do desenvolvimento.
+
+---
+
+# 🌐 O que é GitHub?
+
+O GitHub é uma plataforma de hospedagem de repositórios Git baseada na nuvem.
+
+Além de armazenar projetos, oferece ferramentas para colaboração entre desenvolvedores, gerenciamento de tarefas e revisão de código.
+
+### Recursos principais
+
+- Repositórios remotos;
+- Pull Requests;
+- Issues;
+- Actions;
+- Wiki;
+- Controle de permissões.
+
+---
+
+# 📂 Repositório
+
+Um repositório é o local onde ficam armazenados os arquivos e todo o histórico de alterações de um projeto.
+
+### Criar um repositório Git
+
+```bash
+git init
+```
+
+### Clonar um repositório existente
+
+```bash
+git clone URL_DO_REPOSITORIO
+```
+
+---
+
+# 📋 Estados dos Arquivos
+
+No Git, um arquivo pode estar em diferentes estados:
+
+### Untracked
+
+Arquivo criado mas ainda não monitorado pelo Git.
+
+```bash
+git status
+```
+
+### Staged
+
+Arquivo preparado para o próximo commit.
+
+```bash
+git add arquivo.txt
+```
+
+ou
+
+```bash
+git add .
+```
+
+### Committed
+
+Arquivo salvo no histórico do projeto.
+
+```bash
+git commit -m "Mensagem do commit"
+```
+
+---
+
+# 💾 Commits
+
+Um commit representa um ponto de salvamento do projeto.
+
+Boas mensagens de commit devem ser claras e objetivas.
+
+### Exemplos
+
+```bash
+git commit -m "feat: adiciona página inicial"
+
+git commit -m "fix: corrige erro de responsividade"
+
+git commit -m "docs: atualiza README"
+```
+
+---
+
+# 🌿 Branches
+
+Uma branch é uma linha independente de desenvolvimento.
+
+Permite criar novas funcionalidades sem alterar a versão principal do projeto.
+
+### Criar branch
+
+```bash
+git branch nome-da-branch
+```
+
+### Trocar de branch
+
+```bash
+git checkout nome-da-branch
+```
+
+### Criar e trocar ao mesmo tempo
+
+```bash
+git checkout -b nome-da-branch
+```
+
+### Listar branches
+
+```bash
+git branch
+```
+
+---
+
+# 🔀 Merge
+
+O merge é utilizado para unir alterações de uma branch em outra.
+
+### Exemplo
+
+```bash
+git checkout main
+
+git merge feature/login
+```
+
+---
+
+# 🚀 GitHub
+
+## Enviar projeto para o GitHub
+
+### Conectar repositório remoto
+
+```bash
+git remote add origin URL_DO_REPOSITORIO
+```
+
+### Enviar alterações
+
+```bash
+git push origin main
+```
+
+### Atualizar repositório local
+
+```bash
+git pull origin main
+```
+
+---
+
+# 📝 Issues
+
+Issues são utilizadas para registrar tarefas, bugs, melhorias ou discussões dentro de um projeto.
+
+### Exemplos
+
+- Criar página inicial;
+- Corrigir bug no formulário;
+- Adicionar nova funcionalidade;
+- Atualizar documentação.
+
+Benefícios:
+
+- Organização;
+- Planejamento;
+- Acompanhamento do progresso.
+
+---
+
+# 🔄 Pull Requests
+
+O Pull Request (PR) é uma solicitação para integrar alterações de uma branch em outra.
+
+Fluxo básico:
+
+```text
+Criar Branch
+      ↓
+Desenvolver
+      ↓
+Commit
+      ↓
+Push
+      ↓
+Pull Request
+      ↓
+Revisão
+      ↓
+Merge
+```
+
+### Benefícios
+
+- Revisão de código;
+- Controle de qualidade;
+- Discussão de alterações;
+- Colaboração entre desenvolvedores.
+
+---
+
+# 👥 Trabalho Colaborativo
+
+Fluxo comum em equipes:
+
+1. Criar uma Issue;
+2. Criar uma Branch;
+3. Desenvolver a funcionalidade;
+4. Realizar commits;
+5. Enviar alterações para o GitHub;
+6. Abrir Pull Request;
+7. Revisar código;
+8. Realizar Merge.
+
+---
+
+# 📚 Conventional Commits
+
+Padrão para mensagens de commit.
+
+### Principais tipos
+
+```text
+feat: nova funcionalidade
+
+fix: correção de bug
+
+docs: documentação
+
+style: formatação
+
+refactor: refatoração
+
+test: testes
+
+chore: manutenção
+```
+
+### Exemplos
+
+```bash
+git commit -m "feat: adiciona seção de projetos"
+
+git commit -m "fix: corrige menu mobile"
+
+git commit -m "docs: atualiza README"
+```
+
+---
+
+# 🛠️ Comandos Mais Utilizados
+
+```bash
+git init
+
+git clone
+
+git status
+
+git add .
+
+git commit -m "mensagem"
+
+git push
+
+git pull
+
+git branch
+
+git checkout
+
+git merge
+
+git log
+```
+
+---
+
+# 💡 Boas Práticas
+
+- Criar commits pequenos e frequentes;
+- Utilizar mensagens claras;
+- Trabalhar em branches separadas;
+- Revisar Pull Requests;
+- Documentar projetos;
+- Utilizar Issues para organização;
+- Manter o repositório atualizado.
+
+---
+
+# 🚀 Resumo
+
+Durante o módulo foram estudados os conceitos fundamentais de versionamento e colaboração utilizando Git e GitHub.
+
+Principais tópicos:
+
+✅ Git
+✅ GitHub
+✅ Repositórios
+✅ Commits
+✅ Branches
+✅ Merge
+✅ Push e Pull
+✅ Issues
+✅ Pull Requests
+✅ Conventional Commits
+✅ Trabalho Colaborativo
+
+Esses conhecimentos formam a base do fluxo de desenvolvimento utilizado em equipes profissionais de software e são essenciais para qualquer desenvolvedor.

@@ -1,0 +1,380 @@
+# 📝 Anotações — HTML & CSS
+
+## 📖 Introdução
+
+HTML e CSS são as tecnologias fundamentais para o desenvolvimento de páginas web.
+
+* **HTML (HyperText Markup Language)** é responsável pela estrutura e organização do conteúdo.
+* **CSS (Cascading Style Sheets)** é responsável pela aparência visual e estilização dos elementos.
+
+Enquanto o HTML define o que será exibido, o CSS define como será exibido.
+
+---
+
+# 🌐 HTML
+
+## Estrutura Básica
+
+Todo documento HTML possui uma estrutura padrão:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Minha Página</title>
+</head>
+<body>
+
+</body>
+</html>
+```
+
+### Principais Tags
+
+| Tag               | Função             |
+| ----------------- | ------------------ |
+| `<h1>` até `<h6>` | Títulos            |
+| `<p>`             | Parágrafo          |
+| `<a>`             | Link               |
+| `<img>`           | Imagem             |
+| `<button>`        | Botão              |
+| `<div>`           | Divisão genérica   |
+| `<span>`          | Elemento em linha  |
+| `<ul>`            | Lista não ordenada |
+| `<ol>`            | Lista ordenada     |
+| `<li>`            | Item de lista      |
+
+---
+
+## HTML Semântico
+
+O HTML semântico melhora a organização, acessibilidade e SEO.
+
+### Principais Tags Semânticas
+
+```html
+<header>
+<nav>
+<main>
+<section>
+<article>
+<aside>
+<footer>
+```
+
+Exemplo:
+
+```html
+<header>
+    <h1>Meu Portfólio</h1>
+</header>
+
+<main>
+    <section>
+        <h2>Projetos</h2>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026</p>
+</footer>
+```
+
+---
+
+## Atributos
+
+Os atributos fornecem informações adicionais aos elementos.
+
+```html
+<a href="https://github.com">GitHub</a>
+
+<img src="foto.jpg" alt="Minha Foto">
+
+<input type="text" placeholder="Digite seu nome">
+```
+
+---
+
+# 🎨 CSS
+
+## Formas de Aplicação
+
+### Inline
+
+```html
+<p style="color:red;">
+Texto
+</p>
+```
+
+### Interno
+
+```html
+<style>
+p {
+    color: red;
+}
+</style>
+```
+
+### Externo
+
+```html
+<link rel="stylesheet" href="style.css">
+```
+
+Método mais recomendado.
+
+---
+
+## Seletores
+
+### Elemento
+
+```css
+p {
+    color: blue;
+}
+```
+
+### Classe
+
+```css
+.card {
+    background: white;
+}
+```
+
+```html
+<div class="card"></div>
+```
+
+### ID
+
+```css
+#menu {
+    background: black;
+}
+```
+
+```html
+<nav id="menu"></nav>
+```
+
+---
+
+# 📦 Box Model
+
+Todo elemento HTML é uma caixa composta por:
+
+```text
+Margin
+ └─ Border
+      └─ Padding
+            └─ Content
+```
+
+### Exemplo
+
+```css
+.card {
+    margin: 20px;
+    border: 2px solid black;
+    padding: 15px;
+}
+```
+
+---
+
+# 🎯 Flexbox
+
+Utilizado para organizar elementos em uma dimensão.
+
+```css
+.container {
+    display: flex;
+}
+```
+
+### Principais Propriedades
+
+```css
+justify-content
+align-items
+flex-direction
+gap
+flex-wrap
+```
+
+Exemplo:
+
+```css
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+```
+
+---
+
+# 🏗 CSS Grid
+
+Utilizado para layouts mais complexos.
+
+```css
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+```
+
+Exemplo:
+
+```css
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+```
+
+---
+
+# 📱 Responsividade
+
+Permite adaptar o layout para diferentes tamanhos de tela.
+
+## Media Queries
+
+```css
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
+```
+
+### Conceito Mobile First
+
+Desenvolver primeiro para dispositivos móveis e depois adaptar para telas maiores.
+
+---
+
+# ✨ Pseudo-classes
+
+Permitem alterar o estilo conforme a interação do usuário.
+
+```css
+button:hover {
+    background: blue;
+}
+
+input:focus {
+    border: 2px solid blue;
+}
+```
+
+---
+
+# 🎬 Transições
+
+Criam animações suaves.
+
+```css
+button {
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+```
+
+---
+
+# 🎨 Cores
+
+## RGB
+
+```css
+color: rgb(255, 0, 0);
+```
+
+## HEX
+
+```css
+color: #ff0000;
+```
+
+## HSL
+
+```css
+color: hsl(0, 100%, 50%);
+```
+
+---
+
+# 📏 Unidades
+
+## Absolutas
+
+```css
+px
+```
+
+## Relativas
+
+```css
+%
+em
+rem
+vh
+vw
+```
+
+Exemplo:
+
+```css
+width: 100%;
+height: 100vh;
+font-size: 1rem;
+```
+
+---
+
+# 🚀 Boas Práticas
+
+* Utilizar HTML semântico;
+* Organizar arquivos em pastas;
+* Nomear classes de forma clara;
+* Evitar código duplicado;
+* Utilizar responsividade;
+* Priorizar acessibilidade;
+* Comentar apenas quando necessário;
+* Manter o código limpo e organizado.
+
+---
+
+# 💡 Resumo
+
+HTML define a estrutura da página e CSS define sua aparência.
+
+Principais conceitos estudados:
+
+✅ Estrutura HTML
+✅ HTML Semântico
+✅ Classes e IDs
+✅ Seletores CSS
+✅ Box Model
+✅ Flexbox
+✅ Grid Layout
+✅ Responsividade
+✅ Media Queries
+✅ Hover e Transições
+✅ Boas Práticas Front-End
+
+Esses conceitos formam a base do desenvolvimento web moderno e servem como fundamento para tecnologias mais avançadas como Tailwind CSS, JavaScript, React e Next.js.

@@ -1,0 +1,413 @@
+# 📝 Anotações — Tailwind CSS
+
+## 📖 O que é Tailwind CSS?
+
+O Tailwind CSS é um framework CSS baseado na filosofia **Utility-First**, que fornece classes utilitárias prontas para estilizar elementos diretamente no HTML.
+
+Diferente de frameworks como Bootstrap, o Tailwind não oferece componentes prontos. Em vez disso, disponibiliza classes pequenas e reutilizáveis que podem ser combinadas para criar interfaces totalmente personalizadas.
+
+---
+
+# 🎯 Vantagens do Tailwind CSS
+
+- Desenvolvimento mais rápido;
+- Código altamente reutilizável;
+- Fácil manutenção;
+- Responsividade simplificada;
+- Grande capacidade de personalização;
+- Menos necessidade de criar arquivos CSS extensos.
+
+---
+
+# ⚙️ Como Funciona
+
+Em vez de escrever CSS manualmente:
+
+```css id="9n9zcj"
+.botao {
+  background-color: blue;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+}
+```
+
+Utilizamos classes diretamente no HTML:
+
+```html id="vpk7mz"
+<button class="bg-blue-500 text-white p-3 rounded-lg">Botão</button>
+```
+
+---
+
+# 📏 Espaçamento
+
+## Padding
+
+```html id="nawrg9"
+<p class="p-4">Padding em todos os lados</p>
+```
+
+```html id="8z0e6s"
+<p class="px-4">Horizontal</p>
+
+<p class="py-4">Vertical</p>
+```
+
+### Escala mais comum
+
+```text id="35kofq"
+p-1
+p-2
+p-4
+p-6
+p-8
+p-10
+```
+
+---
+
+## Margin
+
+```html id="4ehhml"
+<div class="m-4"></div>
+```
+
+```html id="8ujs3p"
+<div class="mt-4"></div>
+
+<div class="mb-4"></div>
+
+<div class="mx-auto"></div>
+```
+
+---
+
+# 🎨 Cores
+
+O Tailwind utiliza uma escala de cores.
+
+Exemplo:
+
+```html id="b5vokn"
+<div class="bg-blue-500"></div>
+```
+
+Escala:
+
+```text id="ecbpr8"
+50
+100
+200
+300
+400
+500
+600
+700
+800
+900
+950
+```
+
+Exemplos:
+
+```html id="egxobg"
+text-red-500 bg-green-600 border-purple-400
+```
+
+---
+
+# 🔠 Tipografia
+
+## Tamanho do texto
+
+```html id="v6rpk0"
+<p class="text-sm">Pequeno</p>
+
+<p class="text-lg">Grande</p>
+
+<p class="text-3xl">Muito Grande</p>
+```
+
+---
+
+## Peso da fonte
+
+```html id="f13y4z"
+font-light font-normal font-medium font-bold font-extrabold
+```
+
+---
+
+## Alinhamento
+
+```html id="pkz0ji"
+text-left text-center text-right
+```
+
+---
+
+# 📦 Flexbox
+
+Flexbox é amplamente utilizado no Tailwind.
+
+## Ativar Flex
+
+```html id="8s3mjlwm"
+<div class="flex"></div>
+```
+
+---
+
+## Direção
+
+```html id="6s7jlwm"
+flex-row flex-col
+```
+
+---
+
+## Alinhamento
+
+```html id="z0b59x"
+justify-center justify-between justify-around
+```
+
+```html id="snq7b4"
+items-center items-start items-end
+```
+
+---
+
+## Espaçamento
+
+```html id="ehd4d8"
+gap-4 gap-6 gap-8
+```
+
+---
+
+# 🏗 Grid Layout
+
+## Ativar Grid
+
+```html id="1km06n"
+<div class="grid"></div>
+```
+
+---
+
+## Colunas
+
+```html id="jlwm9r"
+grid-cols-2 grid-cols-3 grid-cols-4
+```
+
+Exemplo:
+
+```html id="9zv6eh"
+<div class="grid grid-cols-3 gap-4"></div>
+```
+
+---
+
+# 📱 Responsividade
+
+O Tailwind segue a abordagem **Mobile First**.
+
+## Breakpoints
+
+```text id="lccwhm"
+sm → 640px
+
+md → 768px
+
+lg → 1024px
+
+xl → 1280px
+
+2xl → 1536px
+```
+
+---
+
+## Exemplo
+
+```html id="vf6s9r"
+<div
+  class="
+text-sm
+md:text-lg
+lg:text-2xl
+"
+></div>
+```
+
+---
+
+## Layout Responsivo
+
+```html id="m1k9c5"
+<div
+  class="
+flex
+flex-col
+md:flex-row
+"
+></div>
+```
+
+---
+
+# 🎬 Hover e Interações
+
+## Hover
+
+```html id="cvwvt6"
+<button
+  class="
+bg-blue-500
+hover:bg-blue-700
+"
+></button>
+```
+
+---
+
+## Escala
+
+```html id="r2wwi1"
+<div
+  class="
+hover:scale-105
+"
+></div>
+```
+
+---
+
+## Transições
+
+```html id="gh7hxh"
+<div
+  class="
+transition
+duration-300
+"
+></div>
+```
+
+---
+
+# 🖼 Bordas e Sombras
+
+## Bordas
+
+```html id="2c74ta"
+border border-2 border-blue-500
+```
+
+---
+
+## Radius
+
+```html id="cyxrm8"
+rounded rounded-lg rounded-xl rounded-full
+```
+
+---
+
+## Sombras
+
+```html id="sbn6rj"
+shadow shadow-md shadow-lg shadow-xl
+```
+
+---
+
+# 🚀 Componentes Comuns
+
+## Botão
+
+```html id="lvb3rw"
+<button
+  class="
+bg-blue-500
+text-white
+px-4
+py-2
+rounded-lg
+hover:bg-blue-700
+transition
+"
+>
+  Clique
+</button>
+```
+
+---
+
+## Card
+
+```html id="9vnjmw"
+<div
+  class="
+bg-white
+shadow-lg
+rounded-xl
+p-6
+"
+>
+  Conteúdo
+</div>
+```
+
+---
+
+# 🛠 Comandos Mais Utilizados
+
+## Instalação
+
+```bash id="7lyzpx"
+npm install tailwindcss
+```
+
+---
+
+## Inicializar Configuração
+
+```bash id="ujmbjj"
+npx tailwindcss init
+```
+
+---
+
+# 💡 Boas Práticas
+
+- Utilizar Mobile First;
+- Evitar classes desnecessárias;
+- Agrupar estilos semelhantes;
+- Utilizar componentes reutilizáveis;
+- Manter consistência visual;
+- Aproveitar a responsividade nativa do framework.
+
+---
+
+# 🚀 Resumo
+
+Tailwind CSS é um framework Utility-First que permite construir interfaces modernas e responsivas diretamente através de classes utilitárias.
+
+### Principais conceitos estudados
+
+✅ Utility-First
+✅ Espaçamento (Padding e Margin)
+✅ Cores
+✅ Tipografia
+✅ Flexbox
+✅ Grid Layout
+✅ Responsividade
+✅ Hover e Transições
+✅ Bordas e Sombras
+✅ Componentização
+
+O Tailwind CSS aumenta significativamente a produtividade no desenvolvimento front-end e é amplamente utilizado em aplicações modernas construídas com React, Next.js e outros frameworks.
