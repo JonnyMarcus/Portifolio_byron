@@ -1,102 +1,115 @@
-# 🌐 HTML & CSS
+# 💼 Landing Page — Portfólio Pessoal
 
-## 📖 Sobre
+Uma landing page moderna e responsiva desenvolvida para apresentar informações profissionais, habilidades, tecnologias e projetos de forma clara e visualmente atrativa.
 
-Este módulo teve como foco o aprendizado dos fundamentos do desenvolvimento web utilizando HTML e CSS, explorando conceitos essenciais para a construção de interfaces modernas, responsivas e acessíveis.
+## 🚀 Sobre o Projeto
 
-Ao longo da capacitação foram estudadas boas práticas de estruturação, estilização e organização de código, culminando no desenvolvimento de um projeto prático para aplicação dos conhecimentos adquiridos.
+Este projeto foi desenvolvido durante a capacitação da EJ byron com o objetivo de aplicar os conhecimentos adquiridos em HTML e CSS na construção de uma interface moderna e responsiva.
+
+A proposta consiste em um portfólio pessoal capaz de apresentar informações profissionais, principais habilidades, projetos desenvolvidos e formas de contato em uma única página.
 
 ---
 
 ## 🎯 Objetivos
 
-- Compreender a estrutura de uma página web;
-- Utilizar HTML semântico;
-- Desenvolver layouts modernos com CSS;
-- Aplicar conceitos de responsividade;
-- Construir interfaces organizadas e intuitivas;
-- Desenvolver um projeto completo utilizando HTML e CSS.
+- Praticar a estruturação semântica com HTML5;
+- Aplicar conceitos de estilização utilizando CSS3;
+- Desenvolver um layout moderno e responsivo;
+- Criar uma experiência agradável para o usuário;
+- Consolidar os fundamentos do desenvolvimento front-end.
 
 ---
 
-## 📚 Conteúdos Estudados
-
-### 🔹 HTML
-
-- Estrutura básica de documentos
-- Tags semânticas
-- Navegação
-- Formulários
-- Imagens e mídias
-- Acessibilidade
-
-### 🔹 CSS
-
-- Seletores
-- Box Model
-- Flexbox
-- Grid Layout
-- Responsividade
-- Transições e animações
-- Organização de estilos
-
----
-
-## 🚀 Projeto Desenvolvido
-
-### 💼 Landing Page — Portfólio Pessoal
-
-Como projeto final do módulo, foi desenvolvida uma Landing Page de Portfólio Pessoal com o objetivo de apresentar informações profissionais, habilidades e projetos de forma moderna e responsiva.
-
-### Funcionalidades
+## ✨ Funcionalidades
 
 - Página totalmente responsiva;
 - Seção de apresentação pessoal;
 - Área de habilidades e tecnologias;
-- Seção de projetos;
+- Portfólio de projetos;
 - Links para redes profissionais;
-- Layout moderno e intuitivo;
-- Navegação simples e objetiva.
+- Navegação intuitiva;
+- Design moderno e organizado.
 
-### Tecnologias Utilizadas
+---
+
+## 🛠️ Tecnologias Utilizadas
 
 - HTML5
 - CSS3
 
 ---
 
-## 📂 Estrutura
+## 📂 Estrutura do Projeto
 
 ```text
-📦 HTML_CSS
+📦 Portfolio_Pessoal
 │
-├── 📁 Entregas
-├── 📝 Anotações
+├── 📁 assets
+│   ├── images
+│   └── icons
+│
+├── 📄 index.html
+├── 📁 CSS
+│   └── style.css
+│
 └── 📖 README.md
 ```
 
 ---
 
-## 🛠 Ferramentas Utilizadas
+## 📸 Preview
 
-- HTML5
-- CSS3
-- Visual Studio Code
-- Git
-- GitHub
+Adicione aqui uma captura de tela do projeto.
 
----
-
-## 💡 Competências Desenvolvidas
-
-- Estruturação semântica de páginas web;
-- Desenvolvimento de layouts responsivos;
-- Organização e reutilização de estilos;
-- Construção de interfaces modernas;
-- Aplicação de boas práticas de desenvolvimento front-end.
+```md
+![Preview do Projeto](./assets/images/preview.png)
+```
 
 ---
 
-## 🚀 Aprendizados
+## 🎨 Conceitos Aplicados
 
-Este módulo proporcionou uma base sólida para o desenvolvimento web, permitindo compreender como estruturar e estilizar páginas modernas utilizando HTML e CSS, além de aplicar esses conhecimentos na criação de uma Landing Page de Portfólio Pessoal.
+### HTML
+
+- Estrutura semântica
+- Organização de conteúdo
+- Navegação
+- Seções e componentes
+
+### CSS
+
+- Flexbox
+- Grid Layout
+- Responsividade
+- Animações
+- Efeitos Hover
+- Media Queries
+
+---
+
+## 📚 Aprendizados
+
+Durante o desenvolvimento deste projeto foram praticados conceitos importantes para a construção de interfaces web modernas, incluindo organização de código, responsividade, semântica e estilização de componentes.
+
+Além dos aspectos técnicos, o projeto contribuiu para o desenvolvimento de habilidades relacionadas à estruturação visual e experiência do usuário.
+
+---
+
+## 🚀 Melhorias Futuras
+
+- Adicionar JavaScript para interações dinâmicas;
+- Implementar modo escuro;
+- Adicionar animações avançadas;
+- Criar formulário de contato funcional;
+- Integrar com APIs externas;
+- Migrar para React ou Next.js.
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Jonny Marcus** durante a Capacitação Trainee da EJ Byron.
+
+---
+
+⭐ Projeto desenvolvido para fins de aprendizado e evolução profissional.

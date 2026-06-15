@@ -1,92 +1,82 @@
 <div align="center">
 
-# 🚀 Capacitação Trainee — EJ Byron
+# 💙 Portfólio Byron
 
-### Formação técnica em desenvolvimento de software e soluções digitais
+### Soluções digitais desenvolvidas durante a trajetória na EJ Byron
 
-Desenvolvendo conhecimento, experiência e boas práticas para atuação em projetos reais.
+Projetos, estudos, capacitações e experiências construídas ao longo da jornada de aprendizado e desenvolvimento tecnológico.
 
 </div>
 
 ---
 
-# 📖 Sobre o Repositório
+# 🚀 Sobre
 
-Este repositório reúne todas as atividades, desafios, projetos e materiais desenvolvidos durante a **Capacitação Trainee da EJ Byron**.
+Este repositório reúne todos os projetos, capacitações, estudos e materiais desenvolvidos durante minha trajetória na **EJ Byron**.
 
-A trilha de aprendizado foi criada para fornecer uma base sólida em desenvolvimento web moderno, versionamento de código e construção de aplicações, preparando os trainees para participarem de projetos internos e demandas reais da empresa.
+O objetivo deste portfólio é documentar minha evolução técnica, registrar conhecimentos adquiridos e apresentar os projetos desenvolvidos nas diferentes áreas de atuação da empresa.
 
-Além do desenvolvimento técnico, a capacitação busca estimular autonomia, organização, trabalho em equipe e boas práticas utilizadas no mercado de tecnologia.
+Aqui estão organizados conteúdos relacionados a desenvolvimento web, mobile, design, back-end e demais atividades realizadas durante o período de capacitação e participação em projetos.
 
 ---
 
 # 💙 Sobre a EJ Byron
 
-A **EJ Byron** é uma Empresa Júnior especializada no desenvolvimento de soluções digitais, atuando nas áreas de:
+A **EJ Byron** é uma Empresa Júnior focada no desenvolvimento de soluções tecnológicas inovadoras, atuando na criação de:
 
-- 🌐 Desenvolvimento Web
-- 📱 Desenvolvimento Mobile
-- 💻 Desenvolvimento Desktop
+- 🌐 Websites e Sistemas Web
+- 📱 Aplicativos Mobile
+- 💻 Aplicações Desktop
 - 🎨 Design de Interfaces (UI/UX)
 
-Nosso propósito é transformar ideias em produtos digitais que gerem valor, inovação e impacto para clientes e parceiros.
+Através de projetos reais e capacitações contínuas, a EJ Byron busca formar profissionais preparados para os desafios do mercado de tecnologia.
 
 ---
 
-# 🎯 Objetivos da Capacitação
+# 🎯 Objetivos deste Portfólio
 
-- Desenvolver fundamentos sólidos de programação e desenvolvimento web;
-- Aprender ferramentas e tecnologias utilizadas em ambientes profissionais;
-- Aplicar boas práticas de desenvolvimento e versionamento;
-- Desenvolver projetos práticos para consolidação do aprendizado;
-- Preparar os trainees para participação em projetos da EJ Byron;
-- Incentivar o aprendizado contínuo e a evolução técnica.
-
----
-
-# 🛣️ Trilha de Aprendizagem
-
-## 📚 Git & GitHub
-
-Aprendizado sobre versionamento de código, gerenciamento de branches, colaboração em equipe, resolução de conflitos e fluxo de desenvolvimento profissional.
-
-## 🌐 HTML & CSS
-
-Criação de páginas web modernas utilizando estruturação semântica, estilização responsiva e boas práticas de acessibilidade.
-
-## 🎨 Tailwind CSS
-
-Desenvolvimento de interfaces modernas através de uma abordagem utility-first, focada em produtividade e escalabilidade.
-
-## ⚡ JavaScript
-
-Fundamentos da linguagem, manipulação do DOM, eventos, lógica de programação, consumo de APIs e criação de aplicações interativas.
-
-## 🚀 Next.js
-
-Desenvolvimento de aplicações modernas utilizando React, componentes reutilizáveis, roteamento, renderização híbrida e otimização de desempenho.
+- Registrar minha evolução técnica;
+- Organizar projetos e atividades desenvolvidas;
+- Consolidar conhecimentos adquiridos durante as capacitações;
+- Documentar aprendizados e boas práticas;
+- Compartilhar experiências e soluções construídas ao longo da jornada.
 
 ---
 
-# 📂 Estrutura do Repositório
+# 📂 Estrutura do Portfólio
 
 ```text
-📦 EJ_Byron_Trainee
+📦 Portfolio_Byron
 │
-├── 📚 Git e GitHub
+├── 🚀 Capacitação Trainee
 │
-├── 🌐 HTML & CSS
+├── 🎨 Design
 │
-├── 🎨 Tailwind CSS
+├── 🌐 Front-end
 │
-├── ⚡ JavaScript
+├── ⚙️ Back-end
 │
-├── 🚀 Next.js
+├── 📱 Mobile
 │
-└── README.md
+└── 📚 Documentação
 ```
 
-Cada módulo segue a seguinte organização:
+---
+
+# 🚀 Capacitação Trainee
+
+Trilha inicial de formação voltada para os fundamentos do desenvolvimento web moderno.
+
+### Tecnologias estudadas
+
+- Git & GitHub
+- HTML5
+- CSS3
+- Tailwind CSS
+- JavaScript
+- Next.js
+
+Cada módulo contém:
 
 ```text
 📦 Módulo
@@ -96,17 +86,76 @@ Cada módulo segue a seguinte organização:
 └── 📖 README.md
 ```
 
-### 📁 Entregas
+---
 
-Projetos, desafios e atividades práticas desenvolvidas durante a capacitação.
+# 🎨 Design
 
-### 📝 Anotações
+Área destinada aos estudos e projetos relacionados à experiência do usuário e design de interfaces.
 
-Resumos, conceitos, comandos, referências e materiais de estudo.
+### Conteúdos
 
-### 📖 README
+- UI Design
+- UX Design
+- Design System
+- Wireframes
+- Prototipação
+- Figma
 
-Documentação do módulo contendo objetivos, conteúdos abordados e tecnologias utilizadas.
+---
+
+# 🌐 Front-end
+
+Projetos focados no desenvolvimento de interfaces modernas, responsivas e acessíveis.
+
+### Tecnologias
+
+- HTML
+- CSS
+- JavaScript
+- TypeScript
+- React
+- Next.js
+- Tailwind CSS
+
+---
+
+# ⚙️ Back-end
+
+Projetos voltados para lógica de negócio, APIs e gerenciamento de dados.
+
+### Tecnologias
+
+- Node.js
+- Express
+- Python
+- Banco de Dados SQL e NoSQL
+- APIs REST
+
+---
+
+# 📱 Mobile
+
+Desenvolvimento de aplicações para dispositivos móveis.
+
+### Tecnologias
+
+- React Native
+- Flutter
+- Consumo de APIs
+- Navegação
+- Persistência de Dados
+
+---
+
+# 📚 Documentação
+
+Espaço dedicado a:
+
+- Anotações de estudos
+- Guias e referências
+- Materiais de apoio
+- Boas práticas
+- Documentação técnica
 
 ---
 
@@ -114,32 +163,24 @@ Documentação do módulo contendo objetivos, conteúdos abordados e tecnologias
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=git,github,html,css,tailwind,js,nextjs,vscode" />
+<img src="https://skillicons.dev/icons?i=git,github,html,css,tailwind,js,ts,react,nextjs,nodejs,python,flutter,figma,vscode" />
 
 </div>
 
 ---
 
-# 📈 Evolução
+# 📈 Jornada de Aprendizado
 
-Este repositório representa minha jornada de aprendizado dentro da EJ Byron, registrando conhecimentos adquiridos, desafios superados e projetos desenvolvidos ao longo da capacitação.
+Este portfólio representa uma coleção de experiências, projetos e conhecimentos adquiridos durante minha trajetória na EJ Byron.
 
-Cada atividade realizada contribui para a construção de uma base técnica sólida e para o desenvolvimento das habilidades necessárias para atuar em projetos reais de tecnologia.
-
----
-
-# 🤝 Agradecimentos
-
-Agradeço à equipe da EJ Byron pela oportunidade de aprendizado, crescimento profissional e desenvolvimento técnico.
-
-A experiência adquirida durante esta capacitação é um passo importante na construção da minha trajetória na área de tecnologia.
+Cada pasta documenta uma etapa do aprendizado, demonstrando evolução técnica, organização, comprometimento e aplicação prática dos conhecimentos estudados.
 
 ---
 
 <div align="center">
 
-## 🚀 Aprender • Construir • Evoluir
+## 💡 Transformando aprendizado em soluções digitais.
 
-### EJ Byron — Transformando aprendizado em soluções.
+### EJ Byron • Tecnologia • Inovação • Evolução
 
 </div>
