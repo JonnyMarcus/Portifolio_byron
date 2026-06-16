@@ -1,0 +1,537 @@
+# 📝 Anotações — JavaScript
+
+## 📖 O que é JavaScript?
+
+JavaScript é uma linguagem de programação criada para adicionar interatividade às páginas web.
+
+Enquanto:
+
+- **HTML** define a estrutura;
+- **CSS** define o estilo;
+- **JavaScript** define o comportamento.
+
+Com JavaScript é possível:
+
+- Manipular elementos da página;
+- Validar formulários;
+- Criar animações;
+- Consumir APIs;
+- Atualizar conteúdos dinamicamente;
+- Desenvolver aplicações web completas.
+
+---
+
+# 🚀 Variáveis
+
+Variáveis são utilizadas para armazenar informações.
+
+## let
+
+Permite alterar o valor posteriormente.
+
+```js id="x7g4ks"
+let nome = "Jonny";
+
+nome = "Marcus";
+```
+
+---
+
+## const
+
+Não permite reatribuição.
+
+```js id="j0ng9l"
+const idade = 20;
+```
+
+---
+
+## Tipos de Dados
+
+```js id="xhbmfk"
+let nome = "Jonny"; // String
+
+let idade = 20; // Number
+
+let ativo = true; // Boolean
+
+let valor = null; // Null
+
+let dado; // Undefined
+```
+
+---
+
+# 🔢 Operadores
+
+## Aritméticos
+
+```js id="ec9d6j"
++
+-
+*
+/
+%
+**
+```
+
+Exemplo:
+
+```js id="n7n4xv"
+let resultado = 10 + 5;
+```
+
+---
+
+## Comparação
+
+```js id="9mt8bn"
+==
+===
+!=
+!==
+>
+<
+>=
+<=
+```
+
+Exemplo:
+
+```js id="t7p9x8"
+console.log(10 > 5);
+```
+
+---
+
+## Lógicos
+
+```js id="2ibg24"
+&&
+||
+!
+```
+
+Exemplo:
+
+```js id="l7i4kg"
+idade >= 18 && possuiCNH;
+```
+
+---
+
+# 🔀 Condicionais
+
+Permitem tomar decisões.
+
+## If
+
+```js id="kkgct6"
+let idade = 20;
+
+if (idade >= 18) {
+  console.log("Maior de idade");
+}
+```
+
+---
+
+## If / Else
+
+```js id="1q07vl"
+if (idade >= 18) {
+  console.log("Maior");
+} else {
+  console.log("Menor");
+}
+```
+
+---
+
+## Switch
+
+```js id="o5ny75"
+let dia = 1;
+
+switch (dia) {
+  case 1:
+    console.log("Segunda");
+    break;
+
+  default:
+    console.log("Outro dia");
+}
+```
+
+---
+
+# 🔄 Loops
+
+Utilizados para repetir ações.
+
+## For
+
+```js id="mb5w3w"
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+```
+
+---
+
+## While
+
+```js id="v1v1y8"
+let i = 0;
+
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+```
+
+---
+
+## For Of
+
+```js id="ujytcf"
+const nomes = ["Jonny", "Maria", "Pedro"];
+
+for (const nome of nomes) {
+  console.log(nome);
+}
+```
+
+---
+
+# 📦 Arrays
+
+Arrays armazenam múltiplos valores.
+
+```js id="h8lks0"
+const frutas = ["Maçã", "Banana", "Laranja"];
+```
+
+---
+
+## Métodos importantes
+
+### Adicionar
+
+```js id="z55v5f"
+frutas.push("Uva");
+```
+
+### Remover
+
+```js id="j8o4xk"
+frutas.pop();
+```
+
+### Tamanho
+
+```js id="m5df3s"
+frutas.length;
+```
+
+---
+
+# 🧩 Objetos
+
+Objetos armazenam dados em pares chave-valor.
+
+```js id="hhj3yl"
+const pessoa = {
+  nome: "Jonny",
+  idade: 20,
+  curso: "Ciência da Computação",
+};
+```
+
+Acessando:
+
+```js id="zfrqvx"
+pessoa.nome;
+
+pessoa.idade;
+```
+
+---
+
+# 🔤 Strings
+
+Strings representam textos.
+
+```js id="gvn4z7"
+const nome = "Jonny";
+```
+
+---
+
+## Métodos úteis
+
+```js id="09pmy7"
+nome.toUpperCase();
+
+nome.toLowerCase();
+
+nome.length;
+```
+
+---
+
+# ⚙️ Funções
+
+Funções permitem reutilizar código.
+
+## Função tradicional
+
+```js id="u6ob6i"
+function somar(a, b) {
+  return a + b;
+}
+```
+
+---
+
+## Arrow Function
+
+```js id="8u4u9s"
+const somar = (a, b) => {
+  return a + b;
+};
+```
+
+---
+
+# 🌐 DOM
+
+## O que é DOM?
+
+DOM significa:
+
+```text id="6h3ynj"
+Document Object Model
+```
+
+É a representação dos elementos HTML em forma de objeto.
+
+Permite que o JavaScript altere o conteúdo da página.
+
+---
+
+## Selecionando elementos
+
+### Por ID
+
+```js id="fg6nlw"
+document.getElementById("titulo");
+```
+
+### Por Classe
+
+```js id="7rhh3q"
+document.querySelector(".card");
+```
+
+### Por Seletor
+
+```js id="pwkwc7"
+document.querySelector("#menu");
+```
+
+---
+
+# ✏️ Manipulação do DOM
+
+## Alterar texto
+
+```js id="9zexgc"
+titulo.textContent = "Novo título";
+```
+
+---
+
+## Alterar HTML
+
+```js id="ot3l8l"
+titulo.innerHTML = "<strong>Texto</strong>";
+```
+
+---
+
+## Alterar classes
+
+```js id="4uvywr"
+elemento.classList.add("ativo");
+
+elemento.classList.remove("ativo");
+```
+
+---
+
+# 🖱 Eventos
+
+Permitem responder às ações do usuário.
+
+```js id="xq9k9w"
+botao.addEventListener("click", () => {
+  console.log("Clique");
+});
+```
+
+Eventos comuns:
+
+```text id="e7cvy8"
+click
+
+submit
+
+change
+
+mouseover
+
+keydown
+```
+
+---
+
+# 📦 Import e Export
+
+Permitem dividir o código em módulos.
+
+## Export
+
+```js id="0kvknv"
+export function somar() {}
+```
+
+---
+
+## Import
+
+```js id="u0hqmr"
+import { somar } from "./funcoes.js";
+```
+
+---
+
+# ⏳ Promises
+
+Representam operações assíncronas.
+
+Estados:
+
+```text id="uxqtw5"
+Pending
+
+Fulfilled
+
+Rejected
+```
+
+Exemplo:
+
+```js id="vruw1u"
+const promessa = new Promise((resolve, reject) => {
+  resolve("Sucesso");
+});
+```
+
+---
+
+# 🌍 APIs
+
+API significa:
+
+```text id="zxdj8d"
+Application Programming Interface
+```
+
+Permite comunicação entre sistemas.
+
+Exemplo:
+
+```js id="t2xbws"
+fetch("https://api.exemplo.com")
+  .then((resposta) => resposta.json())
+  .then((dados) => console.log(dados));
+```
+
+---
+
+# 🚀 Axios
+
+Biblioteca para realizar requisições HTTP.
+
+Instalação:
+
+```bash id="fq24hu"
+npm install axios
+```
+
+Exemplo:
+
+```js id="0frwdo"
+axios.get(url).then((response) => {
+  console.log(response.data);
+});
+```
+
+---
+
+# 🔷 TypeScript
+
+TypeScript é um superset do JavaScript.
+
+Adiciona:
+
+- Tipagem estática;
+- Melhor manutenção;
+- Mais segurança no desenvolvimento.
+
+Exemplo:
+
+```ts id="epb2xt"
+let nome: string = "Jonny";
+
+let idade: number = 20;
+```
+
+---
+
+# 💡 Boas Práticas
+
+- Utilizar nomes significativos;
+- Criar funções pequenas;
+- Evitar repetição de código;
+- Organizar arquivos em módulos;
+- Comentar apenas quando necessário;
+- Utilizar const sempre que possível;
+- Manter o código legível.
+
+---
+
+# 📚 Resumo
+
+Principais conceitos estudados:
+
+✅ Variáveis
+✅ Operadores
+✅ Condicionais
+✅ Loops
+✅ Arrays
+✅ Objetos
+✅ Strings
+✅ Funções
+✅ DOM
+✅ Eventos
+✅ Manipulação de Elementos
+✅ Import e Export
+✅ Promises
+✅ APIs
+✅ Axios
+✅ TypeScript Básico
+
+Esses conceitos formam a base do desenvolvimento moderno com JavaScript e são fundamentais para trabalhar com frameworks como React, Next.js e Node.js.
