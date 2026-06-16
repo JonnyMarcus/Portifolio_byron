@@ -140,6 +140,6 @@ A experiência adquirida durante esta capacitação é um passo importante na co
 
 ## 🚀 Aprender • Construir • Evoluir
 
-### EJ Byron — Transformando aprendizado em soluções.
+### EJ byron — Transformando aprendizado em soluções.
 
 </div>
