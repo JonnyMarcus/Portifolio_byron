@@ -1,10 +1,10 @@
 <div align="center">
 
-# 💙 Portfólio Byron
+# 💙 Portfólio byron
 
-### Soluções digitais desenvolvidas durante a trajetória na EJ Byron
+### Soluções digitais, capacitações e desenvolvimento pessoal construídos durante a trajetória na EJ byron
 
-Projetos, estudos, capacitações e experiências construídas ao longo da jornada de aprendizado e desenvolvimento tecnológico.
+Projetos, estudos, capacitações e experiências desenvolvidas ao longo da jornada de aprendizado e evolução profissional.
 
 </div>
 
@@ -12,34 +12,36 @@ Projetos, estudos, capacitações e experiências construídas ao longo da jorna
 
 # 🚀 Sobre
 
-Este repositório reúne todos os projetos, capacitações, estudos e materiais desenvolvidos durante minha trajetória na **EJ Byron**.
+Este repositório reúne todos os projetos, capacitações, estudos e materiais desenvolvidos durante minha trajetória na **byron**.
 
-O objetivo deste portfólio é documentar minha evolução técnica, registrar conhecimentos adquiridos e apresentar os projetos desenvolvidos nas diferentes áreas de atuação da empresa.
+O objetivo deste portfólio é documentar minha evolução técnica e pessoal, registrar conhecimentos adquiridos e apresentar os projetos desenvolvidos nas diferentes áreas de atuação da empresa.
 
-Aqui estão organizados conteúdos relacionados a desenvolvimento web, mobile, design, back-end e demais atividades realizadas durante o período de capacitação e participação em projetos.
+Além das trilhas técnicas, o portfólio também contempla atividades voltadas ao desenvolvimento interpessoal, organização, gestão e planejamento, por meio das capacitações de **DPR (Desenvolvimento Pessoal e Representatividade)**.
 
 ---
 
-# 💙 Sobre a EJ Byron
+# 💙 Sobre a byron
 
-A **EJ Byron** é uma Empresa Júnior focada no desenvolvimento de soluções tecnológicas inovadoras, atuando na criação de:
+A **byron** é uma Empresa Júnior focada no desenvolvimento de soluções tecnológicas inovadoras, atuando na criação de:
 
 - 🌐 Websites e Sistemas Web
 - 📱 Aplicativos Mobile
 - 💻 Aplicações Desktop
+- ⚙️ APIs e Back-end
 - 🎨 Design de Interfaces (UI/UX)
 
-Através de projetos reais e capacitações contínuas, a EJ Byron busca formar profissionais preparados para os desafios do mercado de tecnologia.
+Através de projetos reais e capacitações contínuas, a byron busca formar profissionais preparados para os desafios do mercado de tecnologia.
 
 ---
 
 # 🎯 Objetivos deste Portfólio
 
-- Registrar minha evolução técnica;
+- Registrar minha evolução técnica e pessoal;
 - Organizar projetos e atividades desenvolvidas;
-- Consolidar conhecimentos adquiridos durante as capacitações;
+- Consolidar conhecimentos adquiridos nas capacitações;
 - Documentar aprendizados e boas práticas;
-- Compartilhar experiências e soluções construídas ao longo da jornada.
+- Compartilhar experiências e soluções construídas ao longo da jornada;
+- Desenvolver habilidades técnicas e interpessoais.
 
 ---
 
@@ -49,6 +51,8 @@ Através de projetos reais e capacitações contínuas, a EJ Byron busca formar 
 📦 Portfolio_Byron
 │
 ├── 🚀 Capacitação Trainee
+│
+├── 🧠 DPR
 │
 ├── 🎨 Design
 │
@@ -80,6 +84,37 @@ Cada módulo contém:
 
 ```text
 📦 Módulo
+│
+├── 📁 Entregas
+├── 📝 Anotações
+└── 📖 README.md
+```
+
+---
+
+# 🧠 DPR — Desenvolvimento Pessoal e Representatividade
+
+Área dedicada ao desenvolvimento de competências interpessoais, organização, liderança e gestão.
+
+### Conteúdos trabalhados
+
+- Desenvolvimento pessoal;
+- Organização e produtividade;
+- Planejamento financeiro;
+- Transparência financeira;
+- Comunicação e feedback;
+- Planejamento estratégico;
+- PDCA;
+- 5W2H;
+- OKRs;
+- Gestão de processos;
+- Trabalho em equipe;
+- Cultura organizacional.
+
+Cada semana possui:
+
+```text
+📦 Semana
 │
 ├── 📁 Entregas
 ├── 📝 Anotações
@@ -128,7 +163,8 @@ Projetos voltados para lógica de negócio, APIs e gerenciamento de dados.
 - Node.js
 - Express
 - Python
-- Banco de Dados SQL e NoSQL
+- SQL
+- NoSQL
 - APIs REST
 
 ---
@@ -151,11 +187,12 @@ Desenvolvimento de aplicações para dispositivos móveis.
 
 Espaço dedicado a:
 
-- Anotações de estudos
-- Guias e referências
-- Materiais de apoio
-- Boas práticas
-- Documentação técnica
+- Anotações de estudos;
+- Guias e referências;
+- Materiais de apoio;
+- Boas práticas;
+- Documentação técnica;
+- Planejamento e organização.
 
 ---
 
@@ -171,16 +208,48 @@ Espaço dedicado a:
 
 # 📈 Jornada de Aprendizado
 
-Este portfólio representa uma coleção de experiências, projetos e conhecimentos adquiridos durante minha trajetória na EJ Byron.
+Este portfólio representa uma coleção de experiências, projetos e conhecimentos adquiridos durante minha trajetória na **byron**.
 
-Cada pasta documenta uma etapa do aprendizado, demonstrando evolução técnica, organização, comprometimento e aplicação prática dos conhecimentos estudados.
+Cada pasta documenta uma etapa do aprendizado, demonstrando:
+
+- Evolução técnica;
+- Desenvolvimento pessoal;
+- Organização;
+- Comprometimento;
+- Trabalho em equipe;
+- Aplicação prática dos conhecimentos estudados;
+- Busca contínua por melhoria e crescimento.
+
+---
+
+# 🌟 Competências Desenvolvidas
+
+### Técnicas
+
+- Desenvolvimento Web
+- Versionamento com Git
+- JavaScript e Next.js
+- Design de Interfaces
+- Desenvolvimento Mobile
+- Boas práticas de programação
+
+### Interpessoais
+
+- Comunicação
+- Organização
+- Planejamento
+- Gestão do tempo
+- Trabalho em equipe
+- Pensamento estratégico
+- Resolução de problemas
+- Aprendizado contínuo
 
 ---
 
 <div align="center">
 
-## 💡 Transformando aprendizado em soluções digitais.
+# 💡 Transformando aprendizado em soluções digitais.
 
-### EJ Byron • Tecnologia • Inovação • Evolução
+### byron • Tecnologia • Desenvolvimento • Inovação • Evolução
 
 </div>
