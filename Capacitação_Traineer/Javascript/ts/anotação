@@ -1,0 +1,1144 @@
+# 📝 JavaScript Completo — Guia de Estudos
+
+# 📖 O que é JavaScript?
+
+JavaScript (JS) é uma linguagem de programação interpretada, multiparadigma e orientada a eventos, criada em 1995 por Brendan Eich.
+
+Inicialmente foi desenvolvida para tornar páginas web interativas, mas atualmente também é utilizada para:
+
+* Desenvolvimento Front-End
+* Desenvolvimento Back-End
+* Aplicativos Mobile
+* Aplicativos Desktop
+* Jogos
+* APIs
+* Inteligência Artificial
+* Automação
+
+JavaScript é uma das três tecnologias fundamentais da Web:
+
+* HTML → Estrutura
+* CSS → Estilo
+* JavaScript → Comportamento
+
+Exemplo:
+
+```html
+<button id="botao">Clique Aqui</button>
+```
+
+```js
+document.getElementById("botao").addEventListener("click", () => {
+  alert("Você clicou!");
+});
+```
+
+---
+
+# 🚀 Variáveis
+
+Variáveis armazenam dados na memória.
+
+## let
+
+Permite alterar o valor posteriormente.
+
+```js
+let nome = "Jonny";
+
+nome = "Marcus";
+```
+
+---
+
+## const
+
+Não permite reatribuição.
+
+```js
+const idade = 20;
+```
+
+❌ Erro:
+
+```js
+const idade = 20;
+
+idade = 21;
+```
+
+---
+
+## var
+
+Forma antiga de declarar variáveis.
+
+```js
+var nome = "Jonny";
+```
+
+Hoje praticamente não é utilizada.
+
+Prefira:
+
+```js
+const
+let
+```
+
+---
+
+# 📊 Tipos de Dados
+
+JavaScript possui tipos primitivos e de referência.
+
+## String
+
+Representa textos.
+
+```js
+const nome = "Jonny";
+```
+
+---
+
+## Number
+
+Representa números inteiros e decimais.
+
+```js
+const idade = 20;
+
+const altura = 1.75;
+```
+
+---
+
+## Boolean
+
+Representa verdadeiro ou falso.
+
+```js
+const ativo = true;
+
+const aprovado = false;
+```
+
+---
+
+## Undefined
+
+Variável declarada sem valor.
+
+```js
+let nome;
+```
+
+---
+
+## Null
+
+Representa ausência intencional de valor.
+
+```js
+const usuario = null;
+```
+
+---
+
+## Symbol
+
+Valor único.
+
+```js
+const id = Symbol("id");
+```
+
+---
+
+## BigInt
+
+Números extremamente grandes.
+
+```js
+const numero = 999999999999999999999999999999n;
+```
+
+---
+
+# 🔍 Verificando Tipos
+
+```js
+typeof "Jonny";
+
+typeof 10;
+
+typeof true;
+```
+
+Resultado:
+
+```js
+string
+
+number
+
+boolean
+```
+
+---
+
+# 🔢 Operadores
+
+## Operadores Aritméticos
+
+```js
++
+-
+*
+/
+%
+**
+```
+
+Exemplos:
+
+```js
+10 + 5;
+
+10 - 5;
+
+10 * 5;
+
+10 / 5;
+
+10 % 3;
+
+2 ** 3;
+```
+
+---
+
+## Operadores de Comparação
+
+```js
+==
+===
+!=
+!==
+>
+<
+>=
+<=
+```
+
+Exemplo:
+
+```js
+10 === 10;
+```
+
+---
+
+## Diferença entre == e ===
+
+```js
+10 == "10";
+```
+
+Resultado:
+
+```js
+true
+```
+
+Porque compara apenas valor.
+
+---
+
+```js
+10 === "10";
+```
+
+Resultado:
+
+```js
+false
+```
+
+Porque compara valor e tipo.
+
+---
+
+## Operadores Lógicos
+
+```js
+&&
+||
+!
+```
+
+Exemplo:
+
+```js
+idade >= 18 && possuiCNH;
+```
+
+---
+
+# 🔀 Estruturas Condicionais
+
+Permitem tomar decisões.
+
+## if
+
+```js
+if (idade >= 18) {
+  console.log("Maior de idade");
+}
+```
+
+---
+
+## if else
+
+```js
+if (idade >= 18) {
+  console.log("Maior");
+} else {
+  console.log("Menor");
+}
+```
+
+---
+
+## else if
+
+```js
+if (nota >= 90) {
+  console.log("A");
+} else if (nota >= 70) {
+  console.log("B");
+} else {
+  console.log("C");
+}
+```
+
+---
+
+## Operador Ternário
+
+Forma resumida de um if.
+
+```js
+const mensagem = idade >= 18 ? "Maior" : "Menor";
+```
+
+---
+
+## Switch
+
+```js
+switch (dia) {
+  case 1:
+    console.log("Segunda");
+    break;
+
+  case 2:
+    console.log("Terça");
+    break;
+
+  default:
+    console.log("Outro dia");
+}
+```
+
+---
+
+# 🔄 Loops
+
+Loops servem para repetir ações.
+
+## For
+
+```js
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+```
+
+---
+
+## While
+
+```js
+let i = 0;
+
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+```
+
+---
+
+## Do While
+
+```js
+let i = 0;
+
+do {
+  console.log(i);
+  i++;
+} while (i < 5);
+```
+
+---
+
+## For Of
+
+Percorre valores.
+
+```js
+const nomes = ["Jonny", "Maria"];
+
+for (const nome of nomes) {
+  console.log(nome);
+}
+```
+
+---
+
+## For In
+
+Percorre propriedades.
+
+```js
+const pessoa = {
+  nome: "Jonny",
+  idade: 20,
+};
+
+for (const chave in pessoa) {
+  console.log(chave);
+}
+```
+
+---
+
+# 📦 Arrays
+
+Arrays armazenam múltiplos valores.
+
+```js
+const frutas = ["Maçã", "Banana", "Uva"];
+```
+
+---
+
+## Acessando posições
+
+```js
+frutas[0];
+
+frutas[1];
+```
+
+---
+
+## Métodos Básicos
+
+### push()
+
+Adiciona no final.
+
+```js
+frutas.push("Laranja");
+```
+
+---
+
+### pop()
+
+Remove o último.
+
+```js
+frutas.pop();
+```
+
+---
+
+### shift()
+
+Remove o primeiro.
+
+```js
+frutas.shift();
+```
+
+---
+
+### unshift()
+
+Adiciona no início.
+
+```js
+frutas.unshift("Morango");
+```
+
+---
+
+### length
+
+Retorna o tamanho.
+
+```js
+frutas.length;
+```
+
+---
+
+# 🔥 Métodos Modernos de Arrays
+
+## forEach()
+
+Percorre elementos.
+
+```js
+const numeros = [1, 2, 3];
+
+numeros.forEach((numero) => {
+  console.log(numero);
+});
+```
+
+---
+
+## map()
+
+Transforma elementos.
+
+```js
+const numeros = [1, 2, 3];
+
+const dobrados = numeros.map((numero) => {
+  return numero * 2;
+});
+```
+
+Resultado:
+
+```js
+[2, 4, 6]
+```
+
+---
+
+## filter()
+
+Filtra elementos.
+
+```js
+const pares = numeros.filter((numero) => {
+  return numero % 2 === 0;
+});
+```
+
+---
+
+## find()
+
+Retorna o primeiro encontrado.
+
+```js
+usuarios.find((usuario) => usuario.id === 1);
+```
+
+---
+
+## findIndex()
+
+Retorna índice.
+
+```js
+usuarios.findIndex((usuario) => usuario.id === 1);
+```
+
+---
+
+## some()
+
+Verifica se existe ao menos um.
+
+```js
+numeros.some((n) => n > 10);
+```
+
+---
+
+## every()
+
+Verifica se todos atendem.
+
+```js
+numeros.every((n) => n > 0);
+```
+
+---
+
+## reduce()
+
+Reduz todos os elementos a um único valor.
+
+```js
+const soma = numeros.reduce((acc, numero) => {
+  return acc + numero;
+}, 0);
+```
+
+---
+
+# 🧩 Objetos
+
+Objetos armazenam informações em pares chave-valor.
+
+```js
+const pessoa = {
+  nome: "Jonny",
+  idade: 20,
+  curso: "Computação",
+};
+```
+
+---
+
+## Acessando propriedades
+
+```js
+pessoa.nome;
+
+pessoa["idade"];
+```
+
+---
+
+## Adicionando propriedades
+
+```js
+pessoa.cidade = "Itajubá";
+```
+
+---
+
+## Alterando propriedades
+
+```js
+pessoa.idade = 21;
+```
+
+---
+
+## Removendo propriedades
+
+```js
+delete pessoa.curso;
+```
+
+---
+
+## Métodos
+
+```js
+const pessoa = {
+  nome: "Jonny",
+
+  falar() {
+    console.log(`Olá ${this.nome}`);
+  },
+};
+```
+
+---
+
+# 🎯 Desestruturação
+
+```js
+const pessoa = {
+  nome: "Jonny",
+  idade: 20,
+};
+
+const { nome, idade } = pessoa;
+```
+
+---
+
+# 🚀 Spread Operator
+
+```js
+const pessoa = {
+  nome: "Jonny",
+};
+
+const novaPessoa = {
+  ...pessoa,
+  idade: 20,
+};
+```
+
+---
+
+# 🔤 Strings
+
+```js
+const nome = "Jonny";
+```
+
+Métodos:
+
+```js
+nome.length;
+
+nome.toUpperCase();
+
+nome.toLowerCase();
+
+nome.includes("Jon");
+
+nome.replace("Jonny", "Marcus");
+
+nome.trim();
+
+nome.slice(0, 3);
+```
+
+---
+
+# ⚙️ Funções
+
+## Função Tradicional
+
+```js
+function somar(a, b) {
+  return a + b;
+}
+```
+
+---
+
+## Arrow Function
+
+```js
+const somar = (a, b) => {
+  return a + b;
+};
+```
+
+---
+
+## Arrow Function Simplificada
+
+```js
+const somar = (a, b) => a + b;
+```
+
+---
+
+# 🔒 Escopo
+
+## Global
+
+```js
+const nome = "Jonny";
+```
+
+---
+
+## Local
+
+```js
+function teste() {
+  const idade = 20;
+}
+```
+
+---
+
+# 🌐 DOM
+
+DOM significa:
+
+Document Object Model
+
+Representação dos elementos HTML em forma de objetos.
+
+---
+
+## Selecionando Elementos
+
+```js
+document.getElementById("titulo");
+
+document.querySelector(".card");
+
+document.querySelectorAll(".card");
+```
+
+---
+
+## Alterando Conteúdo
+
+```js
+titulo.textContent = "Novo Texto";
+```
+
+---
+
+## Alterando HTML
+
+```js
+titulo.innerHTML = "<strong>Texto</strong>";
+```
+
+---
+
+## Alterando Classes
+
+```js
+elemento.classList.add("ativo");
+
+elemento.classList.remove("ativo");
+
+elemento.classList.toggle("ativo");
+```
+
+---
+
+# 🖱 Eventos
+
+```js
+botao.addEventListener("click", () => {
+  console.log("Clicou");
+});
+```
+
+Eventos comuns:
+
+```text
+click
+submit
+change
+input
+mouseover
+mouseout
+keydown
+keyup
+```
+
+---
+
+# 📦 Módulos
+
+Permitem dividir código em arquivos.
+
+## Export Nomeado
+
+```js
+export function somar(a, b) {
+  return a + b;
+}
+```
+
+Importando:
+
+```js
+import { somar } from "./funcoes.js";
+```
+
+---
+
+## Export Default
+
+```js
+export default function saudacao() {
+  console.log("Olá");
+}
+```
+
+Importando:
+
+```js
+import saudacao from "./saudacao.js";
+```
+
+---
+
+# ⏳ Promises
+
+Representam operações assíncronas.
+
+Estados:
+
+```text
+Pending
+Fulfilled
+Rejected
+```
+
+---
+
+## Criando Promise
+
+```js
+const promessa = new Promise((resolve, reject) => {
+  const sucesso = true;
+
+  if (sucesso) {
+    resolve("Sucesso");
+  } else {
+    reject("Erro");
+  }
+});
+```
+
+---
+
+## Consumindo Promise
+
+```js
+promessa
+  .then((resultado) => {
+    console.log(resultado);
+  })
+  .catch((erro) => {
+    console.log(erro);
+  });
+```
+
+---
+
+# 🚀 Async Await
+
+Forma moderna de trabalhar com Promises.
+
+```js
+async function buscarDados() {
+  const resposta = await fetch(url);
+
+  const dados = await resposta.json();
+
+  return dados;
+}
+```
+
+---
+
+# 🌍 APIs
+
+API significa:
+
+Application Programming Interface
+
+Permite que sistemas conversem entre si.
+
+---
+
+## Requisição GET com Fetch
+
+```js
+fetch("https://api.exemplo.com")
+  .then((response) => response.json())
+  .then((dados) => console.log(dados))
+  .catch((erro) => console.log(erro));
+```
+
+---
+
+## GET com Async Await
+
+```js
+async function buscarUsuarios() {
+  try {
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/users"
+    );
+
+    const dados = await response.json();
+
+    console.log(dados);
+  } catch (erro) {
+    console.log(erro);
+  }
+}
+```
+
+---
+
+# 🚀 Axios
+
+Instalação:
+
+```bash
+npm install axios
+```
+
+---
+
+## GET
+
+```js
+axios.get(url).then((response) => {
+  console.log(response.data);
+});
+```
+
+---
+
+## POST
+
+```js
+axios.post(url, {
+  nome: "Jonny",
+});
+```
+
+---
+
+## PUT
+
+```js
+axios.put(url, {
+  nome: "Marcus",
+});
+```
+
+---
+
+## DELETE
+
+```js
+axios.delete(url);
+```
+
+---
+
+# 🔷 TypeScript
+
+Superset do JavaScript.
+
+Adiciona tipagem estática.
+
+```ts
+let nome: string = "Jonny";
+
+let idade: number = 20;
+
+let ativo: boolean = true;
+```
+
+---
+
+# 📚 Conceitos Avançados Importantes
+
+## Hoisting
+
+```js
+console.log(nome);
+
+var nome = "Jonny";
+```
+
+JavaScript move declarações para o topo.
+
+---
+
+## Closures
+
+Função que mantém acesso ao escopo externo.
+
+```js
+function contador() {
+  let valor = 0;
+
+  return () => {
+    valor++;
+    return valor;
+  };
+}
+```
+
+---
+
+## Callback
+
+Função passada para outra função.
+
+```js
+function executar(callback) {
+  callback();
+}
+```
+
+---
+
+## JSON
+
+Formato utilizado em APIs.
+
+```json
+{
+  "nome": "Jonny",
+  "idade": 20
+}
+```
+
+Converter:
+
+```js
+JSON.stringify(objeto);
+
+JSON.parse(json);
+```
+
+---
+
+# 💡 Boas Práticas
+
+* Preferir const ao invés de let.
+* Evitar var.
+* Utilizar nomes significativos.
+* Criar funções pequenas.
+* Evitar repetição de código.
+* Utilizar módulos.
+* Tratar erros com try/catch.
+* Utilizar métodos modernos de arrays.
+* Manter código organizado.
+* Seguir o princípio da responsabilidade única.
+
+---
+
+# 🎯 Roadmap JavaScript
+
+1. Variáveis
+2. Tipos de Dados
+3. Operadores
+4. Condicionais
+5. Loops
+6. Funções
+7. Arrays
+8. Objetos
+9. DOM
+10. Eventos
+11. Módulos
+12. Promises
+13. Async/Await
+14. APIs
+15. Axios
+16. TypeScript
+17. ES6+
+18. Node.js
+19. React
+20. Testes
+21. Arquitetura de Software
+
+Dominar todos esses tópicos fornece uma base sólida para trabalhar profissionalmente com JavaScript no Front-End, Back-End e desenvolvimento Full Stack.
