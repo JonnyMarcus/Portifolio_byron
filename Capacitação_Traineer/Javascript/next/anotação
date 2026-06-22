@@ -1,0 +1,684 @@
+# 📝 Next.js Completo — Guia de Estudos
+
+# 📖 O que é Next.js?
+
+Next.js é um framework React criado pela [Vercel](https://vercel.com?utm_source=chatgpt.com) para desenvolver aplicações web modernas, rápidas e escaláveis.
+
+Ele adiciona diversas funcionalidades ao React, como:
+
+* Roteamento automático
+* Renderização no servidor (SSR)
+* Geração de páginas estáticas (SSG)
+* API Routes
+* Server Components
+* Otimização de imagens
+* SEO avançado
+* Streaming
+* Middleware
+* Full Stack com React
+
+Atualmente é um dos frameworks mais utilizados no mercado para desenvolvimento Front-End e Full Stack.
+
+---
+
+# 🚀 Por que usar Next.js?
+
+Problemas comuns do React puro:
+
+* Configuração manual de rotas
+* SEO limitado
+* Performance inicial menor
+* Estrutura não padronizada
+
+O Next.js resolve tudo isso automaticamente.
+
+---
+
+# 📦 Criando um Projeto
+
+## Com JavaScript
+
+```bash id="n1x2j3"
+npx create-next-app@latest meu-projeto
+```
+
+---
+
+## Com TypeScript
+
+```bash id="m4k5l6"
+npx create-next-app@latest meu-projeto --typescript
+```
+
+---
+
+Entrando na pasta:
+
+```bash id="p7q8r9"
+cd meu-projeto
+```
+
+---
+
+Executando:
+
+```bash id="s1t2u3"
+npm run dev
+```
+
+---
+
+Aplicação disponível em:
+
+```text id="v4w5x6"
+http://localhost:3000
+```
+
+---
+
+# 📂 Estrutura do Projeto
+
+Next.js 13+ utiliza o App Router.
+
+```text id="y7z8a9"
+my-app/
+│
+├── app/
+│   ├── page.tsx
+│   ├── layout.tsx
+│   ├── loading.tsx
+│   ├── error.tsx
+│   └── dashboard/
+│       └── page.tsx
+│
+├── public/
+├── components/
+├── lib/
+├── hooks/
+├── services/
+├── styles/
+├── middleware.ts
+└── package.json
+```
+
+---
+
+# 🏠 Páginas
+
+Toda pasta dentro de `app` pode representar uma rota.
+
+---
+
+## Página Inicial
+
+```text id="a1b2c3"
+app/page.tsx
+```
+
+---
+
+```tsx id="d4e5f6"
+export default function Home() {
+  return <h1>Home</h1>;
+}
+```
+
+---
+
+Resultado:
+
+```text id="g7h8i9"
+/
+```
+
+---
+
+# 📂 Rotas
+
+Criando:
+
+```text id="j1k2l3"
+app/sobre/page.tsx
+```
+
+---
+
+```tsx id="m4n5o6"
+export default function Sobre() {
+  return <h1>Sobre</h1>;
+}
+```
+
+---
+
+URL:
+
+```text id="p7q8r0"
+/sobre
+```
+
+---
+
+# 🔗 Navegação
+
+Utilizando Link.
+
+```tsx id="s1t2u4"
+import Link from "next/link";
+
+export default function Home() {
+  return (
+    <Link href="/sobre">
+      Sobre
+    </Link>
+  );
+}
+```
+
+---
+
+# 🎨 Layouts
+
+Layouts compartilham conteúdo entre páginas.
+
+Arquivo:
+
+```text id="v5w6x7"
+app/layout.tsx
+```
+
+---
+
+```tsx id="y8z9a0"
+export default function RootLayout({
+  children,
+}) {
+  return (
+    <html>
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+---
+
+# 🧩 Componentes
+
+## Componentes de Servidor
+
+Padrão do Next.js.
+
+```tsx id="b1c2d3"
+export default function Produto() {
+  return <h1>Produto</h1>;
+}
+```
+
+Executado no servidor.
+
+---
+
+## Componentes de Cliente
+
+```tsx id="e4f5g6"
+"use client";
+
+export default function Botao() {
+  return <button>Clique</button>;
+}
+```
+
+Executado no navegador.
+
+---
+
+# ⚡ Server Components
+
+Vantagens:
+
+* Menor bundle JavaScript
+* Mais performance
+* Melhor SEO
+* Menor consumo de memória
+
+---
+
+# 🖱 Hooks
+
+Hooks só funcionam em Client Components.
+
+```tsx id="h7i8j9"
+"use client";
+
+import { useState } from "react";
+
+export default function Contador() {
+  const [contador, setContador] =
+    useState(0);
+
+  return (
+    <button
+      onClick={() =>
+        setContador(contador + 1)
+      }
+    >
+      {contador}
+    </button>
+  );
+}
+```
+
+---
+
+# 🌍 Fetch de Dados
+
+Next.js possui fetch nativo otimizado.
+
+```tsx id="k1l2m3"
+async function getUsers() {
+  const response = await fetch(
+    "https://jsonplaceholder.typicode.com/users"
+  );
+
+  return response.json();
+}
+```
+
+---
+
+```tsx id="n4o5p6"
+export default async function Page() {
+  const users = await getUsers();
+
+  return (
+    <div>
+      {users.map((user) => (
+        <p key={user.id}>
+          {user.name}
+        </p>
+      ))}
+    </div>
+  );
+}
+```
+
+---
+
+# 🔄 Renderização
+
+## CSR
+
+Client Side Rendering
+
+```text id="q7r8s9"
+Renderização no navegador
+```
+
+---
+
+## SSR
+
+Server Side Rendering
+
+```text id="t1u2v3"
+Renderização no servidor
+```
+
+---
+
+## SSG
+
+Static Site Generation
+
+```text id="w4x5y6"
+Página gerada no build
+```
+
+---
+
+## ISR
+
+Incremental Static Regeneration
+
+```text id="z7a8b9"
+Atualização automática de páginas estáticas
+```
+
+---
+
+# 📦 Loading
+
+Criar:
+
+```text id="c1d2e3"
+loading.tsx
+```
+
+---
+
+```tsx id="f4g5h6"
+export default function Loading() {
+  return <p>Carregando...</p>;
+}
+```
+
+---
+
+# ❌ Error
+
+Criar:
+
+```text id="i7j8k9"
+error.tsx
+```
+
+---
+
+```tsx id="l1m2n3"
+"use client";
+
+export default function Error() {
+  return <p>Erro!</p>;
+}
+```
+
+---
+
+# 🖼 Otimização de Imagens
+
+Utilizando Image.
+
+```tsx id="o4p5q6"
+import Image from "next/image";
+```
+
+---
+
+```tsx id="r7s8t9"
+<Image
+  src="/foto.jpg"
+  alt="Foto"
+  width={500}
+  height={500}
+/>
+```
+
+---
+
+Benefícios:
+
+* Lazy Loading
+* Compressão automática
+* Melhor performance
+
+---
+
+# 🔍 SEO
+
+## Metadata
+
+```tsx id="u1v2w3"
+export const metadata = {
+  title: "Meu Site",
+  description: "Descrição",
+};
+```
+
+---
+
+# 🌐 API Routes
+
+Criando API dentro do Next.js.
+
+Estrutura:
+
+```text id="x4y5z6"
+app/api/users/route.ts
+```
+
+---
+
+```ts id="a7b8c9"
+export async function GET() {
+  return Response.json({
+    nome: "Jonny",
+  });
+}
+```
+
+---
+
+URL:
+
+```text id="d1e2f3"
+/api/users
+```
+
+---
+
+# 🛡 Middleware
+
+Executado antes das rotas.
+
+```ts id="g4h5i6"
+import { NextResponse } from "next/server";
+
+export function middleware() {
+  return NextResponse.next();
+}
+```
+
+---
+
+# 🔐 Autenticação
+
+Bibliotecas populares:
+
+* [NextAuth.js (Auth.js)](https://authjs.dev?utm_source=chatgpt.com)
+* JWT
+* Clerk
+* Supabase Auth
+
+---
+
+# 🗄 Banco de Dados
+
+Mais utilizados:
+
+* PostgreSQL
+* MySQL
+* MongoDB
+
+---
+
+# 🔥 Prisma ORM
+
+ORM mais popular para Next.js.
+
+Instalação:
+
+```bash id="j7k8l9"
+npm install prisma
+```
+
+---
+
+Inicialização:
+
+```bash id="m1n2o3"
+npx prisma init
+```
+
+---
+
+Exemplo:
+
+```ts id="p4q5r6"
+const users =
+  await prisma.user.findMany();
+```
+
+---
+
+# 🎨 Tailwind CSS
+
+Framework CSS mais usado com Next.js.
+
+Instalação:
+
+```bash id="s7t8u9"
+npm install tailwindcss
+```
+
+---
+
+Exemplo:
+
+```tsx id="v1w2x3"
+<button
+  className="bg-blue-500 text-white p-2 rounded"
+>
+  Botão
+</button>
+```
+
+---
+
+# 📂 Organização Profissional
+
+```text id="y4z5a6"
+src/
+│
+├── app/
+├── components/
+│
+├── hooks/
+│
+├── services/
+│
+├── lib/
+│
+├── types/
+│
+├── utils/
+│
+├── providers/
+│
+├── context/
+│
+└── middleware.ts
+```
+
+---
+
+# ⚡ Server Actions
+
+Permitem executar lógica no servidor sem criar APIs.
+
+```tsx id="b7c8d9"
+"use server";
+
+export async function criarUsuario() {
+  console.log("Executando");
+}
+```
+
+---
+
+# 📚 Conceitos Importantes
+
+## Hydration
+
+Processo que conecta HTML gerado no servidor ao React do navegador.
+
+---
+
+## Streaming
+
+Carrega partes da página gradualmente.
+
+---
+
+## Caching
+
+Next.js armazena dados para melhorar desempenho.
+
+---
+
+## Revalidation
+
+Atualiza conteúdo sem rebuild completo.
+
+---
+
+# 🚀 Deploy
+
+Plataforma recomendada:
+
+[Vercel](https://vercel.com?utm_source=chatgpt.com)
+
+Comando:
+
+```bash id="e1f2g3"
+npm run build
+```
+
+---
+
+# 🏗 Roadmap Next.js
+
+1. HTML
+2. CSS
+3. JavaScript
+4. TypeScript
+5. React
+6. Componentes
+7. Hooks
+8. Roteamento
+9. App Router
+10. Server Components
+11. Client Components
+12. Fetch API
+13. SSR
+14. SSG
+15. ISR
+16. API Routes
+17. Middleware
+18. Autenticação
+19. Prisma
+20. PostgreSQL
+21. Tailwind CSS
+22. Deploy na Vercel
+
+---
+
+# 📚 Resumo
+
+Principais conceitos estudados:
+
+✅ Next.js
+✅ App Router
+✅ Rotas
+✅ Layouts
+✅ Componentes
+✅ Server Components
+✅ Client Components
+✅ Hooks
+✅ Fetch API
+✅ SSR
+✅ SSG
+✅ ISR
+✅ Loading UI
+✅ Error UI
+✅ Otimização de Imagens
+✅ SEO
+✅ API Routes
+✅ Middleware
+✅ Autenticação
+✅ Prisma ORM
+✅ Tailwind CSS
+✅ Server Actions
+✅ Deploy
+
+Dominar esses conceitos permite criar aplicações Full Stack modernas, escaláveis e de alta performance utilizando React e Next.js, tecnologia amplamente utilizada no mercado por startups e grandes empresas.
