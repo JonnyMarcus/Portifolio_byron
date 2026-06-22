@@ -1,0 +1,839 @@
+# 📝 Node.js Completo — Guia de Estudos
+
+# 📖 O que é Node.js?
+
+Node.js é um ambiente de execução JavaScript criado por Ryan Dahl que permite executar código JavaScript fora do navegador.
+
+Antes do Node.js, o JavaScript era utilizado apenas no Front-End. Com o Node.js, tornou-se possível desenvolver:
+
+* APIs REST
+* Aplicações Back-End
+* Sistemas Web
+* Microsserviços
+* Bots
+* Ferramentas CLI
+* Aplicações em tempo real
+* Sistemas de automação
+* Integrações com bancos de dados
+
+---
+
+# 🚀 Como o Node.js Funciona?
+
+O Node.js utiliza a engine V8, desenvolvida pela [Google](https://www.google.com?utm_source=chatgpt.com), para interpretar e executar código JavaScript.
+
+Características:
+
+* Assíncrono
+* Event Driven
+* Non-Blocking I/O
+* Alta performance
+* Escalável
+
+---
+
+# 📦 Instalando o Node.js
+
+Baixe em:
+
+[Node.js Oficial](https://nodejs.org?utm_source=chatgpt.com)
+
+Verificando instalação:
+
+```bash
+node -v
+
+npm -v
+```
+
+---
+
+# 📁 Criando um Projeto
+
+Criar pasta:
+
+```bash
+mkdir meu-projeto
+
+cd meu-projeto
+```
+
+Inicializar projeto:
+
+```bash
+npm init
+```
+
+Ou:
+
+```bash
+npm init -y
+```
+
+Será criado:
+
+```text
+package.json
+```
+
+---
+
+# 📦 Package.json
+
+Arquivo responsável pelas configurações do projeto.
+
+Exemplo:
+
+```json
+{
+  "name": "meu-projeto",
+  "version": "1.0.0",
+  "main": "index.js"
+}
+```
+
+---
+
+# 📚 NPM
+
+NPM significa:
+
+```text
+Node Package Manager
+```
+
+É o gerenciador de pacotes do Node.js.
+
+---
+
+## Instalar Dependências
+
+```bash
+npm install express
+```
+
+ou
+
+```bash
+npm i express
+```
+
+---
+
+## Instalar Dependência de Desenvolvimento
+
+```bash
+npm install nodemon --save-dev
+```
+
+---
+
+## Remover Dependência
+
+```bash
+npm uninstall express
+```
+
+---
+
+## Atualizar Dependências
+
+```bash
+npm update
+```
+
+---
+
+# 📂 Estrutura de Projeto
+
+Exemplo:
+
+```text
+meu-projeto/
+│
+├── node_modules/
+├── src/
+│   ├── controllers/
+│   ├── services/
+│   ├── routes/
+│   ├── models/
+│   └── app.js
+│
+├── package.json
+├── package-lock.json
+└── .env
+```
+
+---
+
+# 📦 Módulos
+
+Node.js trabalha com módulos.
+
+---
+
+## Exportando
+
+```js
+function somar(a, b) {
+  return a + b;
+}
+
+module.exports = somar;
+```
+
+---
+
+## Importando
+
+```js
+const somar = require("./somar");
+```
+
+---
+
+# 🚀 ES Modules
+
+No package.json:
+
+```json
+{
+  "type": "module"
+}
+```
+
+---
+
+Exportando:
+
+```js
+export function somar(a, b) {
+  return a + b;
+}
+```
+
+---
+
+Importando:
+
+```js
+import { somar } from "./somar.js";
+```
+
+---
+
+# 📂 Módulos Nativos
+
+Node.js possui módulos próprios.
+
+---
+
+## Path
+
+Manipulação de caminhos.
+
+```js
+const path = require("path");
+
+console.log(path.basename(__filename));
+```
+
+---
+
+## OS
+
+Informações do sistema operacional.
+
+```js
+const os = require("os");
+
+console.log(os.platform());
+```
+
+---
+
+## FS
+
+Manipulação de arquivos.
+
+```js
+const fs = require("fs");
+```
+
+---
+
+# 📄 Trabalhando com Arquivos
+
+## Criar Arquivo
+
+```js
+const fs = require("fs");
+
+fs.writeFileSync("teste.txt", "Olá Mundo");
+```
+
+---
+
+## Ler Arquivo
+
+```js
+const conteudo = fs.readFileSync(
+  "teste.txt",
+  "utf-8"
+);
+
+console.log(conteudo);
+```
+
+---
+
+## Apagar Arquivo
+
+```js
+fs.unlinkSync("teste.txt");
+```
+
+---
+
+# 🔄 Assincronismo
+
+Node.js é assíncrono.
+
+---
+
+## Callback
+
+```js
+fs.readFile("arquivo.txt", "utf8", (erro, dados) => {
+  console.log(dados);
+});
+```
+
+---
+
+## Promise
+
+```js
+const promessa = new Promise((resolve) => {
+  resolve("Sucesso");
+});
+```
+
+---
+
+## Async Await
+
+```js
+async function buscarDados() {
+  const resposta = await fetch(url);
+
+  return resposta.json();
+}
+```
+
+---
+
+# 🌍 HTTP
+
+Criando servidor sem frameworks.
+
+```js
+const http = require("http");
+
+const servidor = http.createServer((req, res) => {
+  res.end("Olá Mundo");
+});
+
+servidor.listen(3000);
+```
+
+---
+
+# 🚀 Express.js
+
+Framework mais popular do Node.js.
+
+Instalação:
+
+```bash
+npm install express
+```
+
+---
+
+## Criando Servidor
+
+```js
+const express = require("express");
+
+const app = express();
+
+app.listen(3000);
+```
+
+---
+
+## Primeira Rota
+
+```js
+app.get("/", (req, res) => {
+  res.send("Olá Mundo");
+});
+```
+
+---
+
+# 📨 Métodos HTTP
+
+## GET
+
+Buscar dados.
+
+```js
+app.get("/usuarios", (req, res) => {});
+```
+
+---
+
+## POST
+
+Criar dados.
+
+```js
+app.post("/usuarios", (req, res) => {});
+```
+
+---
+
+## PUT
+
+Atualizar dados.
+
+```js
+app.put("/usuarios/:id", (req, res) => {});
+```
+
+---
+
+## DELETE
+
+Excluir dados.
+
+```js
+app.delete("/usuarios/:id", (req, res) => {});
+```
+
+---
+
+# 📦 Middleware
+
+Executado antes da rota.
+
+```js
+app.use((req, res, next) => {
+  console.log("Middleware");
+
+  next();
+});
+```
+
+---
+
+# 📋 Recebendo JSON
+
+```js
+app.use(express.json());
+```
+
+---
+
+# 📤 Enviando Respostas
+
+```js
+res.send("Texto");
+```
+
+---
+
+```js
+res.json({
+  nome: "Jonny",
+});
+```
+
+---
+
+```js
+res.status(404).json({
+  erro: "Não encontrado",
+});
+```
+
+---
+
+# 🔀 Rotas
+
+Arquivo:
+
+```js
+const express = require("express");
+
+const router = express.Router();
+
+router.get("/", (req, res) => {
+  res.send("Usuários");
+});
+
+module.exports = router;
+```
+
+---
+
+Uso:
+
+```js
+app.use("/usuarios", usuariosRoutes);
+```
+
+---
+
+# 🗄 Banco de Dados
+
+Principais bancos utilizados:
+
+## SQL
+
+* MySQL
+* PostgreSQL
+* SQLite
+
+---
+
+## NoSQL
+
+* MongoDB
+
+---
+
+# 🛢 Conectando ao MongoDB
+
+Instalação:
+
+```bash
+npm install mongoose
+```
+
+---
+
+Exemplo:
+
+```js
+const mongoose = require("mongoose");
+
+mongoose.connect(
+  "mongodb://localhost:27017/teste"
+);
+```
+
+---
+
+# 🔒 Variáveis de Ambiente
+
+Instalação:
+
+```bash
+npm install dotenv
+```
+
+---
+
+Arquivo:
+
+```text
+.env
+```
+
+---
+
+Conteúdo:
+
+```env
+PORT=3000
+DB_URL=minha_url
+```
+
+---
+
+Uso:
+
+```js
+require("dotenv").config();
+
+console.log(process.env.PORT);
+```
+
+---
+
+# 🔐 Hash de Senhas
+
+Instalação:
+
+```bash
+npm install bcrypt
+```
+
+---
+
+Hash:
+
+```js
+const bcrypt = require("bcrypt");
+
+const hash = await bcrypt.hash(
+  "senha123",
+  10
+);
+```
+
+---
+
+Comparação:
+
+```js
+await bcrypt.compare(
+  senha,
+  hash
+);
+```
+
+---
+
+# 🔑 JWT
+
+JSON Web Token.
+
+Instalação:
+
+```bash
+npm install jsonwebtoken
+```
+
+---
+
+Gerando Token:
+
+```js
+const jwt = require("jsonwebtoken");
+
+const token = jwt.sign(
+  { id: 1 },
+  "segredo"
+);
+```
+
+---
+
+Verificando:
+
+```js
+jwt.verify(token, "segredo");
+```
+
+---
+
+# 📡 API REST
+
+Uma API REST segue padrões HTTP.
+
+Exemplo:
+
+```text
+GET    /usuarios
+
+GET    /usuarios/1
+
+POST   /usuarios
+
+PUT    /usuarios/1
+
+DELETE /usuarios/1
+```
+
+---
+
+# 🚨 Tratamento de Erros
+
+```js
+try {
+  const dados = await buscar();
+} catch (erro) {
+  console.log(erro);
+}
+```
+
+---
+
+# 🧪 Testes
+
+Framework popular:
+
+```bash
+npm install jest
+```
+
+---
+
+Exemplo:
+
+```js
+test("soma", () => {
+  expect(1 + 1).toBe(2);
+});
+```
+
+---
+
+# ⚡ Nodemon
+
+Reinicia automaticamente o servidor.
+
+Instalação:
+
+```bash
+npm install nodemon --save-dev
+```
+
+---
+
+Script:
+
+```json
+{
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  }
+}
+```
+
+---
+
+Executar:
+
+```bash
+npm run dev
+```
+
+---
+
+# 🏗 Arquitetura MVC
+
+MVC significa:
+
+```text
+Model
+View
+Controller
+```
+
+Estrutura:
+
+```text
+src/
+│
+├── controllers/
+├── models/
+├── routes/
+├── services/
+├── middlewares/
+└── server.js
+```
+
+---
+
+# 📚 Conceitos Importantes
+
+## Event Loop
+
+Responsável por gerenciar operações assíncronas.
+
+Permite que o Node.js execute milhares de conexões simultaneamente.
+
+---
+
+## Streams
+
+Processam dados em partes.
+
+Exemplos:
+
+* Uploads
+* Downloads
+* Vídeos
+* Arquivos grandes
+
+---
+
+## Buffers
+
+Manipulação de dados binários.
+
+```js
+const buffer = Buffer.from("Olá");
+```
+
+---
+
+# 🚀 Roadmap Node.js
+
+1. JavaScript Moderno
+2. Node.js Fundamentals
+3. NPM
+4. Módulos
+5. File System
+6. HTTP
+7. Express
+8. Rotas
+9. Middlewares
+10. APIs REST
+11. MongoDB
+12. PostgreSQL
+13. Autenticação JWT
+14. Hash com Bcrypt
+15. Variáveis de Ambiente
+16. Arquitetura MVC
+17. Testes com Jest
+18. Docker
+19. TypeScript com Node.js
+20. Microsserviços
+21. NestJS
+
+---
+
+# 📚 Resumo
+
+Principais conceitos estudados:
+
+✅ Node.js
+✅ NPM
+✅ Package.json
+✅ Módulos
+✅ File System
+✅ HTTP
+✅ Express.js
+✅ Rotas
+✅ Middlewares
+✅ JSON
+✅ APIs REST
+✅ MongoDB
+✅ PostgreSQL
+✅ Mongoose
+✅ JWT
+✅ Bcrypt
+✅ Variáveis de Ambiente
+✅ MVC
+✅ Testes com Jest
+✅ Event Loop
+✅ Streams
+✅ Buffers
+
+Dominar esses conceitos permite desenvolver APIs profissionais, sistemas escaláveis e aplicações Back-End modernas utilizando Node.js.
