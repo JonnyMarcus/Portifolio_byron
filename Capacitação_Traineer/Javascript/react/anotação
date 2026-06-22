@@ -1,0 +1,813 @@
+# 📝 React Completo — Guia de Estudos
+
+# 📖 O que é React?
+
+React é uma biblioteca JavaScript criada pela [Meta (Facebook)](https://react.dev?utm_source=chatgpt.com) para construir interfaces de usuário (UI).
+
+Seu principal objetivo é facilitar a criação de aplicações web modernas através da utilização de componentes reutilizáveis.
+
+React é atualmente uma das tecnologias mais utilizadas para desenvolvimento Front-End.
+
+Com React podemos criar:
+
+* Sites
+* Dashboards
+* Sistemas Web
+* Landing Pages
+* Aplicações SPA
+* Aplicativos Mobile (React Native)
+* Aplicações Full Stack (com Next.js)
+
+---
+
+# 🚀 Por que usar React?
+
+Antes do React, era comum manipular o DOM diretamente:
+
+```js
+const titulo = document.getElementById("titulo");
+
+titulo.textContent = "Novo título";
+```
+
+Em aplicações grandes isso se torna difícil de manter.
+
+O React resolve esse problema utilizando:
+
+* Componentes
+* Estado
+* Virtual DOM
+* Fluxo de dados previsível
+
+---
+
+# ⚙️ O que é SPA?
+
+SPA significa:
+
+```text
+Single Page Application
+```
+
+Em uma SPA, a página não é recarregada completamente ao navegar.
+
+O React atualiza apenas os elementos necessários.
+
+Benefícios:
+
+* Mais velocidade
+* Melhor experiência do usuário
+* Menos requisições ao servidor
+
+---
+
+# 📦 Criando um Projeto
+
+## Com Vite
+
+Atualmente a forma mais recomendada.
+
+```bash
+npm create vite@latest
+```
+
+---
+
+Selecionar:
+
+```text
+React
+```
+
+ou
+
+```text
+React + TypeScript
+```
+
+---
+
+Instalar dependências:
+
+```bash
+npm install
+```
+
+---
+
+Executar:
+
+```bash
+npm run dev
+```
+
+---
+
+# 📂 Estrutura Básica
+
+```text
+src/
+│
+├── assets/
+├── components/
+├── pages/
+├── hooks/
+├── services/
+├── context/
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+# 🧩 Componentes
+
+Componentes são blocos reutilizáveis da interface.
+
+Exemplo:
+
+```jsx
+function Header() {
+  return <h1>Meu Site</h1>;
+}
+```
+
+---
+
+Utilizando:
+
+```jsx
+function App() {
+  return (
+    <div>
+      <Header />
+    </div>
+  );
+}
+```
+
+---
+
+# 📜 JSX
+
+JSX é uma sintaxe que mistura JavaScript com HTML.
+
+Exemplo:
+
+```jsx
+const titulo = "React";
+
+return <h1>{titulo}</h1>;
+```
+
+---
+
+JSX não é HTML.
+
+Ele é convertido para JavaScript pelo React.
+
+---
+
+# 🎯 Props
+
+Props permitem enviar dados para componentes.
+
+Componente:
+
+```jsx
+function Usuario(props) {
+  return <h1>{props.nome}</h1>;
+}
+```
+
+---
+
+Utilização:
+
+```jsx
+<Usuario nome="Jonny" />
+```
+
+---
+
+Resultado:
+
+```text
+Jonny
+```
+
+---
+
+# 🎁 Desestruturação de Props
+
+Forma mais utilizada.
+
+```jsx
+function Usuario({ nome, idade }) {
+  return (
+    <h1>
+      {nome} - {idade}
+    </h1>
+  );
+}
+```
+
+---
+
+# 🔄 Renderização Condicional
+
+```jsx
+function App() {
+  const logado = true;
+
+  return (
+    <>
+      {logado ? (
+        <h1>Bem-vindo</h1>
+      ) : (
+        <h1>Faça login</h1>
+      )}
+    </>
+  );
+}
+```
+
+---
+
+# 📦 Listas
+
+Renderizando arrays.
+
+```jsx
+const nomes = [
+  "Jonny",
+  "Maria",
+  "Pedro",
+];
+```
+
+---
+
+```jsx
+{
+  nomes.map((nome) => (
+    <p>{nome}</p>
+  ));
+}
+```
+
+---
+
+# 🔑 Key
+
+Toda lista precisa de uma key.
+
+```jsx
+{
+  usuarios.map((usuario) => (
+    <p key={usuario.id}>
+      {usuario.nome}
+    </p>
+  ));
+}
+```
+
+---
+
+# ⚡ Hooks
+
+Hooks permitem utilizar recursos do React dentro de componentes funcionais.
+
+---
+
+# 🧠 useState
+
+Gerencia estados.
+
+```jsx
+import { useState } from "react";
+
+function Contador() {
+  const [contador, setContador] =
+    useState(0);
+
+  return (
+    <>
+      <h1>{contador}</h1>
+
+      <button
+        onClick={() =>
+          setContador(contador + 1)
+        }
+      >
+        Incrementar
+      </button>
+    </>
+  );
+}
+```
+
+---
+
+# 🔄 useEffect
+
+Executa efeitos colaterais.
+
+```jsx
+import { useEffect } from "react";
+```
+
+---
+
+```jsx
+useEffect(() => {
+  console.log("Executou");
+}, []);
+```
+
+---
+
+Executa apenas uma vez.
+
+---
+
+Executando quando valor muda:
+
+```jsx
+useEffect(() => {
+  console.log("Mudou");
+}, [contador]);
+```
+
+---
+
+# 📌 useRef
+
+Mantém valores sem renderizar novamente.
+
+```jsx
+const inputRef = useRef();
+```
+
+---
+
+```jsx
+<input ref={inputRef} />
+```
+
+---
+
+```jsx
+inputRef.current.focus();
+```
+
+---
+
+# 📦 useMemo
+
+Memoriza cálculos.
+
+```jsx
+const resultado = useMemo(() => {
+  return calcular();
+}, []);
+```
+
+---
+
+# ⚡ useCallback
+
+Memoriza funções.
+
+```jsx
+const buscar = useCallback(() => {
+  console.log("Buscar");
+}, []);
+```
+
+---
+
+# 🌎 useContext
+
+Compartilha dados globalmente.
+
+Criando contexto:
+
+```jsx
+import { createContext } from "react";
+
+export const AuthContext =
+  createContext();
+```
+
+---
+
+Provider:
+
+```jsx
+<AuthContext.Provider
+  value={{ usuario }}
+>
+  {children}
+</AuthContext.Provider>
+```
+
+---
+
+Consumindo:
+
+```jsx
+const { usuario } =
+  useContext(AuthContext);
+```
+
+---
+
+# 🏗 Ciclo de Vida
+
+Componentes possuem ciclos.
+
+## Montagem
+
+```text
+Componente criado
+```
+
+---
+
+## Atualização
+
+```text
+Estado mudou
+```
+
+---
+
+## Desmontagem
+
+```text
+Componente removido
+```
+
+---
+
+# 🌍 Consumindo APIs
+
+Utilizando Fetch.
+
+```jsx
+useEffect(() => {
+  async function buscarUsuarios() {
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/users"
+    );
+
+    const dados =
+      await response.json();
+
+    console.log(dados);
+  }
+
+  buscarUsuarios();
+}, []);
+```
+
+---
+
+# 🚀 Axios
+
+Instalação:
+
+```bash
+npm install axios
+```
+
+---
+
+Exemplo:
+
+```jsx
+import axios from "axios";
+
+const response =
+  await axios.get(url);
+
+console.log(response.data);
+```
+
+---
+
+# 📝 Formulários
+
+Controlados pelo React.
+
+```jsx
+const [nome, setNome] =
+  useState("");
+```
+
+---
+
+```jsx
+<input
+  value={nome}
+  onChange={(e) =>
+    setNome(e.target.value)
+  }
+/>
+```
+
+---
+
+# 🛣 React Router
+
+Responsável pelo roteamento.
+
+Instalação:
+
+```bash
+npm install react-router-dom
+```
+
+---
+
+Criando rotas:
+
+```jsx
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+```
+
+---
+
+```jsx
+<BrowserRouter>
+  <Routes>
+    <Route
+      path="/"
+      element={<Home />}
+    />
+
+    <Route
+      path="/sobre"
+      element={<Sobre />}
+    />
+  </Routes>
+</BrowserRouter>
+```
+
+---
+
+# 🎨 CSS no React
+
+## CSS Tradicional
+
+```jsx
+import "./App.css";
+```
+
+---
+
+## CSS Modules
+
+```jsx
+import styles from "./App.module.css";
+```
+
+---
+
+Uso:
+
+```jsx
+<div className={styles.card}>
+```
+
+---
+
+# 💨 Tailwind CSS
+
+Exemplo:
+
+```jsx
+<button
+  className="
+    bg-blue-500
+    text-white
+    p-2
+    rounded
+  "
+>
+  Botão
+</button>
+```
+
+---
+
+# ⚡ Performance
+
+## React.memo
+
+Evita renderizações desnecessárias.
+
+```jsx
+export default React.memo(Card);
+```
+
+---
+
+## useMemo
+
+Memoriza cálculos.
+
+---
+
+## useCallback
+
+Memoriza funções.
+
+---
+
+# 🚨 Tratamento de Erros
+
+```jsx
+try {
+  const dados =
+    await buscarUsuarios();
+} catch (erro) {
+  console.error(erro);
+}
+```
+
+---
+
+# 🧪 Testes
+
+Bibliotecas populares:
+
+* Jest
+* React Testing Library
+
+Instalação:
+
+```bash
+npm install jest
+```
+
+---
+
+Exemplo:
+
+```jsx
+test("renderiza botão", () => {
+  expect(botao).toBeVisible();
+});
+```
+
+---
+
+# 📚 Conceitos Importantes
+
+## Virtual DOM
+
+React cria uma cópia virtual do DOM.
+
+Quando algo muda:
+
+```text
+Estado muda
+↓
+Virtual DOM atualiza
+↓
+Compara alterações
+↓
+Atualiza somente o necessário
+```
+
+---
+
+## Reconciliation
+
+Processo de comparação entre Virtual DOM antigo e novo.
+
+---
+
+## State
+
+Dados que podem mudar.
+
+```jsx
+const [nome, setNome] =
+  useState("");
+```
+
+---
+
+## Props
+
+Dados recebidos do componente pai.
+
+---
+
+## Componentização
+
+Divisão da interface em componentes reutilizáveis.
+
+---
+
+# 🏗 Organização Profissional
+
+```text
+src/
+│
+├── assets/
+├── components/
+├── pages/
+├── hooks/
+├── context/
+├── services/
+├── routes/
+├── utils/
+├── styles/
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+# 🚀 Ecossistema React
+
+Bibliotecas populares:
+
+* React Router
+* Axios
+* Tailwind CSS
+* Zustand
+* Redux Toolkit
+* React Query
+* React Hook Form
+* Framer Motion
+* Styled Components
+
+---
+
+# 📚 Roadmap React
+
+1. HTML
+2. CSS
+3. JavaScript
+4. ES6+
+5. Componentes
+6. JSX
+7. Props
+8. Eventos
+9. useState
+10. useEffect
+11. Renderização Condicional
+12. Listas
+13. Formulários
+14. Consumo de APIs
+15. React Router
+16. Context API
+17. useRef
+18. useMemo
+19. useCallback
+20. React Query
+21. Zustand ou Redux
+22. TypeScript
+23. Next.js
+
+---
+
+# 📚 Resumo
+
+Principais conceitos estudados:
+
+✅ React
+✅ JSX
+✅ Componentes
+✅ Props
+✅ State
+✅ Eventos
+✅ Renderização Condicional
+✅ Listas e Keys
+✅ useState
+✅ useEffect
+✅ useRef
+✅ useMemo
+✅ useCallback
+✅ Context API
+✅ Formulários
+✅ APIs
+✅ Axios
+✅ React Router
+✅ CSS Modules
+✅ Tailwind CSS
+✅ Virtual DOM
+✅ Reconciliation
+✅ Performance
+✅ Testes
+
+Dominar esses conceitos permite criar aplicações Front-End modernas, escaláveis e profissionais, além de fornecer a base necessária para trabalhar com Next.js, React Native e diversas tecnologias do ecossistema React.
