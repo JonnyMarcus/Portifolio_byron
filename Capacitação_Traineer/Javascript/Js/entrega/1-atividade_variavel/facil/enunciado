@@ -1,0 +1,20 @@
+/**
+ * Exercício 1 : Saudações formatadas
+ * Implemente a função greet(nome, idade) que retorna:
+ * "Olá, <nome>! Você tem <idade> anos."
+ *
+ * Regras:
+ * - Use template literal (crases).
+ * - `idade` pode ser string ou number; converta para número.
+ * - Se não for um número válido, lance TypeError.
+ */
+
+ function greet(nome, idade) {
+  const idadeNum = Number(idade);
+  if (Number.isNaN(idadeNum)) {
+    throw new TypeError('idade inválida');
+  }
+  return `Olá, ${nome}! Você tem ${idadeNum} anos.`;
+}
+
+module.exports={greet};
