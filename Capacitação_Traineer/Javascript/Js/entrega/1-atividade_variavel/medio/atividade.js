@@ -1,24 +1,21 @@
-/**
- * Exercício 2 : Conversor de temperaturas
- * Implemente as funções abaixo retornando number com 2 casas decimais.
- * Entrada pode ser string ou number; se inválida, lance TypeError.
- */
-
-/**
- * Converte Fahrenheit -> Celsius
- * Fórmula: C = (F - 32) * 5/9
- */
 
 function toCelsius(f) {
-  // FAÇA AQUI
+   const fahreNum = Number(c)
+    if (Number.isNaN( fahreNum)) {
+    throw new TypeError('valor inválida');
+  }
+    f = ((f-32)*5)/9;
+   return f; 
 }
 
-/**
- * Converte Celsius -> Fahrenheit
- * Fórmula: F = C * 9/5 + 32
- */
 function toFahrenheit(c) {
-  // FAÇA AQUI
+    const celsiousNum = Number(c)
+    if (Number.isNaN(celsiousNum)) {
+    throw new TypeError('valor inválida');
+  }
+    c = (c * 9/5) +32;
+
+    return c;
 }
 
 module.exports={toCelsius, toFahrenheit};
