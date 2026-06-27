@@ -7,12 +7,12 @@
  *
  */
 
-function normalizeUser(input) {
-  // TODO: não mutar `input`; retorne um novo objeto
-  // Dicas úteis (não obrigatório usar):
-  // const safe = (v) => (v == null ? '' : String(v));
-  // const toIntOrNull = (v) => { const n = Number(v); return Number.isInteger(n) ? n : null; };
-  // const capitalizeWords = (s) => s.trim().split(/\s+/).map(p => p[0]?.toUpperCase() + p.slice(1).toLowerCase()).join(' ');
-}
+////function normalizeUser(input) {
+// TODO: não mutar `input`; retorne um novo objeto
+// Dicas úteis (não obrigatório usar):
+// const safe = (v) => (v == null ? '' : String(v));
+// const toIntOrNull = (v) => { const n = Number(v); return Number.isInteger(n) ? n : null; };
+// const capitalizeWords = (s) => s.trim().split(/\s+/).map(p => p[0]?.toUpperCase() + p.slice(1).toLowerCase()).join(' ');
+//}
 
-module.exports={normalizeUser}
+///module.exports={normalizeUser}
