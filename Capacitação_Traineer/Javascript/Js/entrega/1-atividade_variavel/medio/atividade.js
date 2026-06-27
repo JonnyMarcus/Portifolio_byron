@@ -1,21 +1,22 @@
-
 function toCelsius(f) {
-   const fahreNum = Number(c)
-    if (Number.isNaN( fahreNum)) {
-    throw new TypeError('valor inválida');
+  let fahreNum = Number(f);
+  if (Number.isNaN(fahreNum)) {
+    throw new TypeError("valor inválido");
   }
-    f = ((f-32)*5)/9;
-   return f; 
+  fahreNum = ((fahreNum - 32) * 5) / 9;
+  fahreNum = fahreNum.toFixed(2);
+
+  return Number(fahreNum);
 }
 
 function toFahrenheit(c) {
-    const celsiousNum = Number(c)
-    if (Number.isNaN(celsiousNum)) {
-    throw new TypeError('valor inválida');
+  let celsiusNum = Number(c);
+  if (Number.isNaN(celsiusNum)) {
+    throw new TypeError("valor inválido");
   }
-    c = (c * 9/5) +32;
-
-    return c;
+  celsiusNum = (celsiusNum * 9) / 5 + 32;
+  celsiusNum = celsiusNum.toFixed(2);
+  return Number(celsiusNum);
 }
 
-module.exports={toCelsius, toFahrenheit};
+module.exports = { toCelsius, toFahrenheit };

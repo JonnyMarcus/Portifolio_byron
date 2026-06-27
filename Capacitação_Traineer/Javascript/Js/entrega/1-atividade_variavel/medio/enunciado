@@ -6,7 +6,7 @@
 
 /**
  * Converte Fahrenheit -> Celsius
- * Fórmula: C = (F - 32) * 5/9
+ * Fórmula: C = ((F - 32) * 5)/9
  */
 
 function toCelsius(f) {
@@ -15,10 +15,10 @@ function toCelsius(f) {
 
 /**
  * Converte Celsius -> Fahrenheit
- * Fórmula: F = C * 9/5 + 32
+ * Fórmula: F = (C * 9/5 )+ 32
  */
 function toFahrenheit(c) {
   // FAÇA AQUI
 }
 
-module.exports={toCelsius, toFahrenheit};
+module.exports = { toCelsius, toFahrenheit };
