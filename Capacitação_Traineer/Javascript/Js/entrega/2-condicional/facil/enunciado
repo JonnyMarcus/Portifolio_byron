@@ -1,0 +1,25 @@
+/**
+ * Exercício 4 (fácil): Classificador de idade
+ *
+ * Implemente e classifyAge(n) que retorna:
+ *  "crianca" | "adolescente" | "adulto" | "idoso"
+ *
+ * Regras:
+ * - n pode ser number ou string numérica -> converta com Number(n).
+ * - n < 0 -> lance RangeError.
+ * - Não numérico -> lance TypeError.
+ * - Faixas (inclusive nas pontas):
+ *   0–12  : "crianca"
+ *   13–17 : "adolescente"
+ *   18–59 : "adulto"
+ *   60+   : "idoso"
+ *
+ * Dica: use guard clauses para validar antes de classificar.
+ *
+ */
+
+function classifyAge(n) {
+  // FAÇA AQUI
+}
+
+module.exports = { classifyAge };

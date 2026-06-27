@@ -1,0 +1,31 @@
+/**
+ * Exercício (difícil): Validador de senha
+ *
+ * Implemente validatePassword(pwd) que retorna:
+ *   { valid: boolean, reasons: string[] }
+ *
+ * Regras:
+ * - Aceite apenas string; caso contrário, lance TypeError.
+ * - Tamanho mínimo: 8
+ * - Pelo menos 1 minúscula [a-z]
+ * - Pelo menos 1 maiúscula [A-Z]
+ * - Pelo menos 1 dígito [0-9]
+ * - Pelo menos 1 especial do conjunto:
+ *   ! @ # $ % ^ & * ( ) - _ + = [ ] { } ; : ' " , . < > / ? \ |
+ * - Sem espaços em branco (/\s/)
+ *
+ * possiveis valores do array de reasons:
+ *  - "min_length"
+ *  - "missing_lowercase"
+ *  - "missing_uppercase"
+ *  - "missing_digit"
+ *  - "missing_special"
+ *  - "has_whitespace"
+ *
+ * Se não houver reasons, coloque reasons:null
+ */
+function validatePassword(pwd) {
+  // FAÇA AQUI
+}
+
+module.exports={validatePassword}

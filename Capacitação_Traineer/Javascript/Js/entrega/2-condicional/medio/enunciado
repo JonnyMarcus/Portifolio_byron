@@ -1,0 +1,21 @@
+/**
+ * Exercício 5 (médio): Tarifa de energia (faixas progressivas)
+ *
+ * Calcule o valor da conta com as faixas:
+ * - 0 a 100 kWh      -> R$ 0.50 por kWh
+ * - 101 a 200 kWh    -> R$ 0.75 por kWh (apenas o excedente acima de 100)
+ * - acima de 200 kWh -> R$ 1.20 por kWh (apenas o excedente acima de 200)
+ *
+ * Regras:
+ * - kwh pode ser number ou string numérica.
+ * - kwh < 0 -> RangeError.
+ * - Não numérico -> TypeError.
+ * - Retorne number com 2 casas decimais (use Number(total.toFixed(2))).
+ *
+ */
+
+function energyBill(kwh) {
+  // FAÇA AQUI
+}
+
+module.exports = { energyBill };
