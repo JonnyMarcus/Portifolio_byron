@@ -1,0 +1,18 @@
+/**
+ * Exercício 10 (fácil): Filtrar pares
+ *
+ * Implemente e onlyEvens(nums) que retorna **apenas** os números
+ * **pares inteiros** do array de entrada.
+ *
+ * Regras:
+ * - Considere par quando Number.isInteger(n) && n % 2 === 0.
+ * - Ignore valores não inteiros (floats, strings, objetos, etc.).
+ * - Não mutar o array original; retorne um **novo array**.
+ * - Se não houver valores validos, retorne o array vazio.
+ */
+
+function onlyEvens(nums) {
+  // FAÇA AQUI
+}
+
+module.exports = { onlyEvens };

@@ -1,0 +1,21 @@
+/**
+ * Exercício 12 (difícil): Ordenação multi-critério
+ *
+ * Implemente e sortBy(items, ...criteria) que ordena uma **cópia**
+ * do array de objetos usando vários critérios encadeados.
+ *
+ * Cada critério é um par: ["campo", "ascendente" ou "descendente"].
+ *
+ * Regras:
+ * - Não modifique o array original (faça uma cópia antes de ordenar).
+ * - Compare números numericamente; strings com localeCompare.
+ * - Trate null/undefined de forma consistente: empurre para o **final**.
+ * - Em empate, siga para o próximo critério; se todos empatarem, preserve ordem.
+ *
+ */
+
+function sortBy(items, ...criteria) {
+  //FAÇA AQUI
+}
+
+module.exports={sortBy}

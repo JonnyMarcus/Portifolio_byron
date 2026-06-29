@@ -1,0 +1,20 @@
+/**
+ * Exercício 11 (médio): Agrupar por chave
+ *
+ * Implemente groupBy(items, key) que agrupa um array de objetos
+ * em um objeto do tipo { [valorDeKey]: Item[] }.
+ *
+ * Regras:
+ * - items: array de objetos.
+ * - key: string com o nome da propriedade a agrupar.
+ * - A chave do resultado deve ser String(valorDaPropriedade).
+ * - Itens com valor undefined/null para a chave geram chaves "undefined"/"null".
+ * - Não mutar items; retorne um **novo objeto** de agrupamento.
+ *
+ */
+
+function groupBy(items, key) {
+  //FAÇA AQUI
+}
+
+module.exports = { groupBy };
