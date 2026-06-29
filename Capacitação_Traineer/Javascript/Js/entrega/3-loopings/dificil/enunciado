@@ -1,0 +1,31 @@
+/**
+ * Exercício 9 (difícil): FizzBuzz range
+ *
+ * Implemente fizzbuzz(a, b) que retorna um array com os valores de a até b (inclusive),
+ * descobrindo o seguinte e substituindo pela string ao lado:
+ *  - múltiplos de 3  -> "Fizz"
+ *  - múltiplos de 5  -> "Buzz"
+ *  - múltiplos de 15 -> "FizzBuzz"
+ *  - caso contrário  -> mantem o numero
+ *
+ * Regras:
+ * - a e b devem ser inteiros (aceite string numérica, mas converta).
+ * - Se a conversão falhar ou não for inteiro, lance TypeError.
+ * - Se a > b, lance RangeError.
+ * - Retorne um **novo array** de comprimento (b - a + 1).
+ *
+ * Exemplo:
+ * - Entrada-> A=1, B=5, Resposta->[1,2,"Fizz",4,"Buzz"]
+ *
+ * Dicas:
+ * - Converta cedo: const A = Number(a), B = Number(b)
+ * - Valide com Number.isInteger(A/B)
+ * - Laço for do A ao B (inclusive) preenchendo o resultado.
+ *
+ */
+
+function fizzbuzz(a, b) {
+  // TODO: implemente
+}
+
+module.exports = { fizzbuzz };

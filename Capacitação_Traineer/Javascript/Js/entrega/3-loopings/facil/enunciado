@@ -1,0 +1,24 @@
+/**
+ * Exercício 7(fácil): Soma de array
+ *
+ * Implemente e  sumArray(nums) que soma apenas **números válidos**.
+ *
+ * Regras:
+ * - Recebe um array com todos os numeros
+ * - Número válido: Number(v) é **finito** (use Number.isFinite).
+ * - Ignore NaN, Infinity, -Infinity e valores não numéricos.
+ * - Retorne 0 se o array for vazio ou se nenhum número válido existir.
+ * - Retorne a soma de todos os numeros validos
+ *
+ * Dicas:
+ * - Use for...of para percorrer o array.
+ * - Converta cada valor com Number(v) antes de somar.
+ *
+
+ */
+
+function sumArray(nums) {
+  // FAÇA AQUI
+}
+
+module.exports = { sumArray };
