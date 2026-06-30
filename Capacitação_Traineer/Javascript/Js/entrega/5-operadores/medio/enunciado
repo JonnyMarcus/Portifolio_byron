@@ -1,0 +1,19 @@
+/**
+ * Exercício 14 (médio): Comparador de versões (semver simples)
+ *
+ * Compare strings como "1.10.2" e retorne:
+ *  -1 se a < b
+ *   0 se a == b
+ *   1 se a > b
+ *
+ * Regras:
+ * - Quebre pelas "." e compare **como números**.
+ * - Partes faltantes contam como 0 ("1.2" ≡ "1.2.0").
+ * - Se alguma parte NÃO for inteiro não negativo, lance TypeError.
+ * quando alguma parte não é número inteiro ≥ 0
+ */
+function compareSemver(a, b) {
+  // FAÇA AQUI
+}
+
+module.exports = { compareSemver };

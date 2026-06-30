@@ -1,0 +1,40 @@
+    /**
+ * Exercício 15 (difícil): Avaliador de expressão (mini-parser)
+ *
+ * Avalie uma expressão **sem espaços** com números (inteiros/decimais),
+ * operadores + - * / e parênteses. Não use `eval`/`Function`.
+ *
+ * Regras:
+ * - Respeite precedência: parênteses > * / > + -
+ * - Divisão por zero deve lançar Error.
+ * - Se a expressão for inválida (tokens ruins, parênteses desbalanceados), lance Error.
+ *
+ */
+
+function evalExpr(expr) {
+  // TODO: implemente
+  // Sugestão de roteiro (Shunting-Yard):
+  //
+  // 1) tokenize(expr): transforma em tokens {type: 'num'|'op'|'(' | ')', value: string}
+  //    - números: sequência de dígitos com opcional um '.' (ex.: "12", "3.5")
+  //    - operadores: + - * /
+  //    - parênteses: ( )
+  //    - se encontrar algo inválido -> throw Error
+  //
+  // 2) toRPN(tokens): converte p/ RPN usando Shunting-Yard
+  //    - pilha de operadores; respeite precedência/associatividade
+  //
+  // 3) evalRPN(rpn): percorre tokens, empilha números; ao ver operador,
+  //    desempilha dois operandos, aplica e empilha o resultado.
+  //    - em divisão, se divisor === 0 -> throw Error
+  //
+  // 4) no fim, a pilha deve conter um único número (resultado); caso contrário -> Error
+}
+
+/* ======= Opcional: esboços de helpers para orientar a implementação ======= */
+
+// function tokenize(s) { /* TODO */ }
+// function toRPN(tokens) { /* TODO */ }
+// function evalRPN(tokens) { /* TODO */}
+
+module.exports={evalExpr}
