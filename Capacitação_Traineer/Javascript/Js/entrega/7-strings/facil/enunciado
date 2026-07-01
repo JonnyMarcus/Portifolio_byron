@@ -1,0 +1,16 @@
+/**
+ * Exercício 19 (fácil): Reverter string
+ *
+ * Implemente e reverse(s) que retorna s ao contrário.
+ *
+ * Regras:
+ * - Aceite apenas string; caso contrário, lance TypeError.
+ * - Considere Unicode: use Array.from para não “quebrar” caracteres compostos.
+ *
+ */
+
+function reverse(s) {
+  //FAÇA AQUI
+}
+
+module.exports = { reverse };

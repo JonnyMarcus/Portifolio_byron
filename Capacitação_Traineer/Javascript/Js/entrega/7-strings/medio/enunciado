@@ -1,0 +1,18 @@
+/**
+ * Exercício 20 (médio): Slugify
+ *
+ * Implemente e slugify(s) que transforma a string em um slug:
+ * - minúsculas
+ * - sem acentos (remover diacríticos)
+ * - espaços e separadores -> '-'
+ * - somente [a-z0-9-]
+ * - sem '--' (colapsar)
+ * - sem '-' nas pontas
+ *
+ */
+
+export function slugify(s) {
+  // FAÇA AQUI
+}
+
+module.exports={slugify}

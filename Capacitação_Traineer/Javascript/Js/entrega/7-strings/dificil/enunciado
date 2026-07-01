@@ -1,0 +1,19 @@
+/**
+ * Exercício 21 (difícil): Extrair e-mails
+ *
+ * Implemente e  extractEmails(text) que retorna **array de e-mails únicos**
+ * encontrados no texto, normalizados para minúsculas.
+ *
+ * Regras:
+ * - text deve ser string; senão, TypeError.
+ * - Use regex para e-mails comuns (não precisa cobrir RFC completa).
+ * - Remova pontuação final acidental (.,;:) grudada ao match.
+ * - Retorne apenas valores **únicos**, preservando a ordem de aparição.
+ *
+ */
+
+function extractEmails(text) {
+  // FAÇA AQUI
+}
+
+module.exports = { extractEmails };
