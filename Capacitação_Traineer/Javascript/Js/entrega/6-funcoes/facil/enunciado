@@ -1,0 +1,20 @@
+/**
+ * Exercício 16 (fácil): Soma parcial (closure)
+ *
+ * Implemente e add(a) que retorna uma função b => a + b.
+ *
+ * Regras:
+ * - a e b podem ser number ou string numérica; converta com Number(...).
+ * - Se a conversão de a ou b resultar em NaN, lance TypeError.
+ * - Retorne sempre um number.
+ *
+ * Dica:
+ * - Use closure para capturar A já validado.
+ *
+ */
+
+export function add(a) {
+  // FAÇA AQUI
+}
+
+module.exports={add}

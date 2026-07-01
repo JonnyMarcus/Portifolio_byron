@@ -1,0 +1,19 @@
+/**
+ * Exercício 17 (médio): Memoization simples
+ *
+ * Implemente e  memo(fn) que retorna uma função memoizada.
+ *
+ * Regras:
+ * - fn deve ser uma função; caso contrário, lance TypeError.
+ * - A chave do cache é JSON.stringify(args).
+ * - Preserve o this de fn (use apply/call).
+ * - Se JSON.stringify falhar (ex.: referência circular), faça fallback:
+ *   opção didática: chame fn normalmente **sem** cache (não lance erro).
+ *
+ */
+
+function memo(fn) {
+  // FAÇA AQUI
+}
+
+module.exports = { memo };
