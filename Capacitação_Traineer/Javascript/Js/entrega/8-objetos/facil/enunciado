@@ -1,0 +1,19 @@
+/**
+ * Exercício 22 (fácil): Contador de chaves
+ *
+ * Implemente e countKeys(obj) que retorna o número de
+ * **propriedades próprias enumeráveis** do objeto (equivalente a Object.keys(obj).length).
+ *
+ * Regras:
+ * - Considere somente chaves próprias enumeráveis (o que `Object.keys` retorna).
+ * - Não conte chaves herdadas do protótipo.
+ * - Não conte símbolos (use `Object.keys`, não `Reflect.ownKeys`).
+ * - Se `obj` não for objeto válido (ou for null), lance TypeError.
+ *
+ */
+
+function countKeys(obj) {
+  // FAÇA AQUI
+}
+
+module.exports = { countKeys };

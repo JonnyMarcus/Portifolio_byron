@@ -1,0 +1,21 @@
+/**
+ * Exercício 23 (médio): Merge imutável (shallow)
+ *
+ * Implemente e  merge(a, b) que retorna um **novo objeto**
+ * contendo as chaves de `a` e `b`, com **`b` sobrescrevendo `a`**.
+ *
+ * Regras:
+ * - Não mutar `a` nem `b`.
+ * - Cópia **rasa** (shallow): objetos internos continuam **por referência**.
+ * - Se `a` ou `b` não forem objetos válidos (ou forem null), lance TypeError.
+ *
+ * Dicas:
+ * - Você pode usar `{ ...a, ...b }` ou `Object.assign({}, a, b)`.
+ *
+ */
+
+function merge(a, b) {
+  // FAÇA AQUI
+}
+
+module.exports = { merge };
