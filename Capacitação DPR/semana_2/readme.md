@@ -1,127 +1,41 @@
 # 💰 Semana 2 — Planejamento Financeiro e Transparência Financeira
 
+**Capacitação DPR • byron.solutions**
+
 ## 📖 Sobre
 
-A segunda semana da capacitação da **Diretoria de Presidência (DPR)** da **byron.solutions** foi dedicada aos conceitos de planejamento financeiro e transparência financeira, pilares fundamentais para a sustentabilidade e o crescimento de qualquer organização.
-
-Durante esta etapa, foram apresentados conceitos relacionados à gestão de recursos, controle financeiro, organização de receitas e despesas, além da importância da transparência na tomada de decisões e na prestação de contas dentro da empresa.
-
----
+A segunda semana foi dedicada aos conceitos de planejamento financeiro e transparência financeira, pilares fundamentais para a sustentabilidade e o crescimento de qualquer organização — gestão de recursos, controle financeiro, organização de receitas e despesas, e a importância da transparência na tomada de decisões e na prestação de contas.
 
 ## 🎯 Objetivos
 
-- Compreender a importância do planejamento financeiro;
-- Entender como os recursos da empresa são gerenciados;
-- Conhecer práticas de transparência financeira;
-- Aprender conceitos básicos de controle financeiro;
-- Desenvolver uma visão estratégica sobre a gestão de recursos;
-- Compreender a importância dos indicadores financeiros para a tomada de decisões.
+- Compreender a importância do planejamento financeiro
+- Entender como os recursos da empresa são gerenciados
+- Conhecer práticas de transparência financeira
+- Aprender conceitos básicos de controle financeiro
+- Desenvolver uma visão estratégica sobre a gestão de recursos
+- Compreender a importância dos indicadores financeiros para a tomada de decisões
 
----
+## 📚 Conteúdos estudados
 
-## 📚 Conteúdos Estudados
+| Tópico | O que cobre |
+|---|---|
+| **Planejamento Financeiro** | Organização e controle dos recursos, previsão de necessidades futuras, redução de riscos |
+| **Controle Financeiro** | Receitas, despesas, fluxo de caixa, controle de custos, registro financeiro |
+| **Indicadores Financeiros** | Entradas e saídas, saldo disponível, custos operacionais, evolução financeira ao longo do tempo |
+| **Transparência Financeira** | Disponibilização clara e acessível das informações financeiras para os membros da organização |
+| **Gestão Responsável dos Recursos** | Responsabilidade financeira, planejamento de investimentos, sustentabilidade e prestação de contas |
 
-### 💡 Planejamento Financeiro
+## 🛠️ Ferramentas utilizadas
 
-O planejamento financeiro é o processo de organização e controle dos recursos da empresa, permitindo prever necessidades futuras, reduzir riscos e auxiliar na tomada de decisões.
-
-Principais benefícios:
-
-- Controle dos gastos;
-- Melhor utilização dos recursos;
-- Previsibilidade financeira;
-- Maior segurança na tomada de decisões;
-- Crescimento sustentável.
-
----
-
-### 📊 Controle Financeiro
-
-Foram apresentados conceitos relacionados ao acompanhamento das movimentações financeiras da empresa.
-
-Tópicos abordados:
-
-- Receitas;
-- Despesas;
-- Fluxo de caixa;
-- Controle de custos;
-- Registro financeiro.
-
----
-
-### 📈 Indicadores Financeiros
-
-Os indicadores permitem acompanhar a saúde financeira da organização e auxiliar no planejamento estratégico.
-
-Exemplos:
-
-- Entradas e saídas;
-- Saldo disponível;
-- Custos operacionais;
-- Resultados financeiros;
-- Evolução financeira ao longo do tempo.
-
----
-
-### 🔍 Transparência Financeira
-
-A transparência financeira consiste em disponibilizar informações financeiras de forma clara e acessível para os membros da organização.
-
-Benefícios:
-
-- Maior confiança entre os membros;
-- Melhor acompanhamento dos resultados;
-- Tomada de decisões mais assertiva;
-- Fortalecimento da cultura organizacional.
-
----
-
-### 🏛️ Gestão Responsável dos Recursos
-
-Também foi discutida a importância da utilização consciente dos recursos da empresa.
-
-Princípios abordados:
-
-- Responsabilidade financeira;
-- Planejamento de investimentos;
-- Controle de despesas;
-- Sustentabilidade financeira;
-- Prestação de contas.
-
----
-
-## 🛠️ Ferramentas Utilizadas
-
-- Google Sheets
-- Planilhas Financeiras
-- Ferramentas de Controle Financeiro
-- Materiais internos da byron.solutions
-
----
+Google Sheets · planilhas financeiras · ferramentas de controle financeiro · materiais internos da byron.solutions
 
 ## 💡 Aprendizados
 
-Ao final da segunda semana foi possível compreender como o planejamento financeiro influencia diretamente a saúde e o crescimento de uma organização.
+Compreensão de como o planejamento financeiro influencia diretamente a saúde e o crescimento de uma organização, e de como a transparência financeira garante confiança, organização e alinhamento entre os membros da empresa.
 
-Também foi possível entender a importância da transparência financeira para garantir confiança, organização e alinhamento entre os membros da empresa.
+## 🚀 Próximos passos
 
----
-
-## 📈 Resultados
-
-- Compreensão dos conceitos básicos de gestão financeira;
-- Entendimento da importância do planejamento financeiro;
-- Conhecimento sobre controle de receitas e despesas;
-- Familiarização com indicadores financeiros;
-- Desenvolvimento de uma visão mais estratégica sobre recursos financeiros.
-
----
-
-## 🚀 Próximos Passos
-
-Nas próximas semanas serão aprofundados temas relacionados à organização de dados, planejamento estratégico, documentação, mapeamento de processos e automação de atividades.
-
----
+As próximas semanas abordam organização de dados, planejamento estratégico, documentação, mapeamento de processos e automação de atividades.
 
 <div align="center">
 
