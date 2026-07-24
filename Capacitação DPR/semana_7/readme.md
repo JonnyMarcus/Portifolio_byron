@@ -1,265 +1,84 @@
-# 📌 Semana 7 - Make | Automação de Processos
+# ⚙️ Semana 7 — Make | Automação de Processos
 
-## 📖 Descrição
+**Capacitação DPR • byron.solutions**
 
-Durante a sétima semana da capacitação da **byron**, foi apresentada a plataforma **Make**, uma ferramenta de automação *No-Code* que permite integrar diferentes aplicações e automatizar processos de forma visual. O objetivo foi compreender como criar fluxos de trabalho capazes de conectar serviços como **Notion** e **Google Drive**, reduzindo tarefas manuais, aumentando a produtividade e minimizando erros.
+## 📖 Sobre
 
-Ao longo da atividade, foi desenvolvido um cenário responsável por monitorar uma base de dados do Notion, baixar automaticamente os arquivos anexados e enviá-los para uma pasta específica no Google Drive.
+Na sétima semana foi apresentada a plataforma **Make**, uma ferramenta de automação *no-code* que integra diferentes aplicações e automatiza processos de forma visual. O objetivo foi compreender como criar fluxos de trabalho capazes de conectar serviços como **Notion** e **Google Drive**, reduzindo tarefas manuais, aumentando a produtividade e minimizando erros.
 
----
+Como atividade prática, foi desenvolvido um cenário que monitora uma base de dados do Notion, baixa automaticamente os arquivos anexados e os envia para uma pasta específica no Google Drive.
 
-# 🎯 Objetivos
+## 🎯 Objetivos
 
-- Compreender os conceitos de automação No-Code;
-- Conhecer a plataforma Make;
-- Aprender a criar cenários (Scenarios);
-- Integrar o Notion ao Google Drive;
-- Automatizar o envio de arquivos;
-- Utilizar filtros condicionais;
-- Tratar registros sem anexos;
-- Processar registros com múltiplos arquivos.
+- Compreender os conceitos de automação no-code
+- Conhecer a plataforma Make e seus cenários (scenarios)
+- Integrar o Notion ao Google Drive
+- Automatizar o envio de arquivos
+- Utilizar filtros condicionais
+- Tratar registros sem anexos e registros com múltiplos arquivos
 
----
+## 🧠 O que é o Make?
 
-# 🧠 O que é o Make?
+Uma plataforma de integração que conecta aplicativos por meio de fluxos de trabalho visuais, executando ações automaticamente sempre que um evento definido ocorre — como receber dados de um formulário, salvar arquivos em um serviço de armazenamento ou atualizar um banco de dados.
 
-O **Make** é uma plataforma de integração e automação que conecta diversos aplicativos por meio de fluxos de trabalho visuais. Em vez de realizar tarefas repetitivas manualmente, é possível criar automações que executam ações automaticamente sempre que um determinado evento ocorre.
+## ⚙️ Conceitos centrais da plataforma
 
-Alguns exemplos de automação incluem:
+| Conceito | O que é |
+|---|---|
+| **Editor visual** | Interface gráfica baseada em módulos conectados entre si |
+| **Triggers (gatilhos)** | Iniciam a automação quando um evento ocorre (ex: novo item criado no Notion) |
+| **Actions (ações)** | Executadas após o gatilho (ex: baixar arquivo, atualizar registro, enviar e-mail) |
+| **Filtros** | Definem condições para controlar o fluxo (ex: "possui arquivo? sim → continua / não → ignora") |
+| **Manipulação de dados** | Formatação de textos, conversão de datas, operações matemáticas, manipulação de listas |
+| **Integrações** | Milhares de apps conectáveis: Notion, Google Drive/Docs/Sheets, Gmail, Slack, Discord, GitHub, Trello, Dropbox, APIs REST |
+| **Histórico de execução** | Tempo de execução, dados processados, logs e erros de cada rodada |
 
-- Receber dados de formulários;
-- Criar documentos automaticamente;
-- Salvar arquivos em serviços de armazenamento;
-- Atualizar bancos de dados;
-- Enviar notificações;
-- Integrar APIs e sistemas externos.
+## 🛠️ Atividade desenvolvida
 
----
-
-# ⚙️ Principais Funcionalidades
-
-## Editor Visual
-
-Permite criar automações utilizando uma interface gráfica baseada em módulos conectados entre si.
-
-Exemplo:
+Cenário para transferir automaticamente arquivos do Notion para o Google Drive:
 
 ```text
-Notion
-   ↓
-HTTP
-   ↓
-Google Drive
-```
-
----
-
-## Triggers (Gatilhos)
-
-Os gatilhos iniciam automaticamente uma automação quando um evento ocorre.
-
-Exemplos:
-
-- Novo item criado no Notion;
-- Novo formulário respondido;
-- Novo arquivo enviado.
-
----
-
-## Actions (Ações)
-
-Após identificar um gatilho, o Make executa automaticamente uma sequência de ações.
-
-Exemplos:
-
-- Baixar arquivos;
-- Criar documentos;
-- Atualizar registros;
-- Enviar e-mails;
-- Fazer upload de arquivos.
-
----
-
-## Filtros
-
-Os filtros permitem definir condições para controlar o fluxo da automação.
-
-Exemplo:
-
-```text
-Possui arquivo?
-      │
-Sim ───► Continua o fluxo
-
-Não ───► Ignora o registro
-```
-
----
-
-## Manipulação de Dados
-
-O Make oferece diversas funções para transformar informações durante a execução do fluxo, como:
-
-- Formatação de textos;
-- Conversão de datas;
-- Operações matemáticas;
-- Manipulação de listas;
-- Conversão de fusos horários.
-
----
-
-## Integrações
-
-A plataforma possui integração com milhares de aplicativos, incluindo:
-
-- Notion;
-- Google Drive;
-- Google Docs;
-- Google Sheets;
-- Gmail;
-- Slack;
-- Discord;
-- GitHub;
-- Trello;
-- Dropbox;
-- APIs REST.
-
----
-
-## Histórico de Execução
-
-Cada automação gera um histórico contendo:
-
-- Tempo de execução;
-- Dados processados;
-- Logs completos;
-- Erros encontrados.
-
-Esses registros facilitam a identificação e correção de problemas.
-
----
-
-# 🏢 Aplicações na byron
-
-Durante a capacitação foi apresentado como o Make pode ser utilizado para automatizar diversos processos internos, como:
-
-- Emissão de certificados;
-- Termos de voluntariado;
-- Termos de encerramento;
-- Organização de documentos;
-- Integração entre plataformas.
-
----
-
-# 🛠️ Atividade Desenvolvida
-
-Foi criado um cenário responsável por transferir automaticamente arquivos do Notion para o Google Drive.
-
-Fluxo desenvolvido:
-
-```text
-Notion
-Watch Data Source Items
+Notion (Watch Data Source Items)
         ↓
-HTTP
-Download a File
+HTTP (Download a File)
         ↓
-Google Drive
-Upload a File
+Google Drive (Upload a File)
 ```
 
----
+**1. Notion — Watch Data Source Items:** monitora a base de dados para identificar novos registros com arquivos (nome da semana, arquivos anexados, URL do arquivo).
 
-# 📂 Etapas do Processo
+**2. HTTP — Download a File:** baixa o arquivo usando a URL fornecida pelo Notion.
 
-## 1. Notion - Watch Data Source Items
+**3. Google Drive — Upload a File:** envia o arquivo para a pasta configurada, com nome personalizado e organização automática dos documentos.
 
-Monitoramento da base de dados para identificar novos registros contendo arquivos.
+## 🚀 Melhorias implementadas
 
-Informações utilizadas:
+| Melhoria | O que resolve |
+|---|---|
+| **Filtro de arquivos** | Impede que registros sem anexos interrompam a execução da automação |
+| **Processamento completo (`Choose Where to Start → All`)** | Processa todos os registros existentes na base em uma única execução |
+| **Suporte a múltiplos arquivos** | Módulo adicional (Iterator) para registros com mais de um arquivo anexado, garantindo que todos sejam enviados |
 
-- Nome da semana;
-- Arquivos anexados;
-- URL do arquivo.
+## 🏢 Aplicações na byron
 
----
+Emissão de certificados · termos de voluntariado e de encerramento · organização de documentos · integração entre plataformas internas
 
-## 2. HTTP - Download a File
+## 🛠️ Ferramentas utilizadas
 
-Realiza o download do arquivo utilizando a URL fornecida pelo Notion.
+Make · Notion · HTTP Module · Google Drive · APIs REST
 
----
+## 📚 Conhecimentos adquiridos
 
-## 3. Google Drive - Upload a File
+Automação de processos · integração entre aplicações · conceitos de no-code · gatilhos e ações · configuração de módulos · filtros condicionais · tratamento de erros · processamento de múltiplos registros
 
-Envia automaticamente o arquivo para a pasta configurada no Google Drive.
+## ✅ Conclusão
 
-Também foi configurado:
+A atividade permitiu compreender como criar automações no Make para integrar diferentes plataformas de forma simples e eficiente, indo além do fluxo básico com melhorias que tornam a automação mais robusta e preparada para aplicações reais — filtros contra registros sem anexo e suporte a múltiplos arquivos por registro.
 
-- Nome personalizado do arquivo;
-- Pasta de destino;
-- Organização automática dos documentos.
+<div align="center">
 
----
+### ⚙️ Semana 7 — Make | Automação de Processos
 
-# 🚀 Melhorias Implementadas
+**Capacitação DPR • byron.solutions**
 
-## Filtro de Arquivos
-
-Foi adicionado um filtro entre os módulos do Notion e HTTP para impedir que registros sem arquivos interrompessem a execução da automação.
-
-```text
-Possui arquivo?
-      │
-Sim ───► Continua
-
-Não ───► Ignora
-```
-
----
-
-## Processamento Completo
-
-A opção **Choose Where to Start → All** foi utilizada para processar todos os registros existentes na base de dados em uma única execução.
-
----
-
-## Suporte para Múltiplos Arquivos
-
-Foi implementado um módulo adicional para processar registros que possuem mais de um arquivo anexado, garantindo que todos os documentos sejam enviados corretamente ao Google Drive.
-
----
-
-# 💻 Ferramentas Utilizadas
-
-- Make;
-- Notion;
-- HTTP Module;
-- Google Drive;
-- APIs REST.
-
----
-
-# 📚 Conhecimentos Adquiridos
-
-Durante esta semana foram desenvolvidos conhecimentos sobre:
-
-- Automação de processos;
-- Integração entre aplicações;
-- Conceitos de No-Code;
-- Criação de cenários no Make;
-- Gatilhos e ações;
-- Configuração de módulos;
-- Manipulação de arquivos;
-- Filtros condicionais;
-- Tratamento de erros;
-- Processamento de múltiplos registros;
-- Integração entre Notion e Google Drive.
-
----
-
-# ✅ Conclusão
-
-A atividade permitiu compreender como criar automações utilizando o Make para integrar diferentes plataformas de forma simples e eficiente. O cenário desenvolvido automatiza o monitoramento de uma base de dados do Notion, realiza o download dos arquivos anexados e os envia automaticamente para o Google Drive.
-
-Além da automação básica, foram implementadas melhorias importantes, como filtros para evitar erros causados por registros sem anexos e suporte para múltiplos arquivos, tornando o fluxo mais robusto, confiável e preparado para aplicações reais.
+</div>
