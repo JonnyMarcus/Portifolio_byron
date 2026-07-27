@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-    <div>
+    <main className="grow">
       <h1>inicio</h1>
-    </div>
+    </main>
   );
 }
