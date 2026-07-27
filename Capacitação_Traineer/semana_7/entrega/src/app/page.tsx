@@ -11,7 +11,7 @@ export default function Home() {
           </p>
 
           <Link
-            className="bg-orange-500 text-white font-bold rounded-lg px-3 py-2"
+            className="bg-orange-500 text-white font-bold rounded-lg px-3 py-2 hover:bg-orange-700 transition-colors"
             href="/receitas"
           >
             Ver todas as receitas
