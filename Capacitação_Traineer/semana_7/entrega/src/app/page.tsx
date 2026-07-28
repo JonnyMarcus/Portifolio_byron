@@ -1,9 +1,10 @@
 import Link from "next/link";
-
+import { ChevronRight } from "lucide-react";
 export default function Home() {
   return (
     <main className="grow">
       <div className="container mx-auto">
+        {/* section Hero */}
         <section className="flex flex-col gap-4 items-center bg-[url('/receitas/bg_home-receitas.png')] bg-cover bg-center bg-no-repeat py-10">
           <img
             src="receitas/receitas-deliciosas1.png"
@@ -22,6 +23,19 @@ export default function Home() {
           >
             Ver todas as receitas
           </Link>
+        </section>
+        {/* section Receitas em destaque*/}
+        <section>
+          <div className="container mx-auto ">
+            <h2>Receitas em destaque</h2>
+
+            {/*Cards*/}
+
+            <Link href="/receitas">
+              Ver todas as receitas
+              <ChevronRight />
+            </Link>
+          </div>
         </section>
       </div>
     </main>
