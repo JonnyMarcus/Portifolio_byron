@@ -2,7 +2,7 @@
 
 ## 📖 Sobre
 
-Este módulo foi desenvolvido com o objetivo de apresentar os fundamentos de versionamento de código utilizando Git e GitHub, ferramentas essenciais para o desenvolvimento de software moderno.
+Este módulo foi desenvolvido com o objetivo de apresentar os fundamentos de versionamento de código utilizando **Git** e **GitHub**, ferramentas essenciais para o desenvolvimento de software moderno.
 
 Ao longo da capacitação foram estudados conceitos relacionados ao controle de versões, colaboração em equipe, gerenciamento de branches e fluxo de trabalho utilizado em ambientes profissionais.
 
@@ -73,11 +73,11 @@ git merge
 
 ## 🚀 Projeto Desenvolvido
 
-### 📖 História Colaborativa
+### 📖 História Colaborativa — "História Maluca"
 
 Como atividade prática da capacitação, foi desenvolvido um projeto em equipe com o objetivo de simular um ambiente real de desenvolvimento.
 
-A proposta consistiu na construção colaborativa de uma história fictícia utilizando Git e GitHub para gerenciamento das contribuições.
+A proposta consistiu na construção colaborativa de uma história fictícia utilizando Git e GitHub para gerenciamento das contribuições, acompanhando **Rusty**, um caranguejo desenvolvedor em busca de seu avô desaparecido.
 
 Durante o projeto foram utilizados:
 
@@ -93,16 +93,22 @@ O foco principal da atividade foi praticar o fluxo de desenvolvimento utilizado 
 ## 📂 Estrutura
 
 ```text
-📦 Git_GitHub
+📦 Semana_1
 │
-├── 📁 Entregas
-├── 📝 Anotações
-└── 📖 README.md
+├── 📁 entrega
+│   ├── 📖 Historia_maluca.md
+│   └── 📄 readme.md
+├── 📝 anotação
+└── 📖 readme.md
 ```
 
 ---
 
 ## 🛠️ Ferramentas Utilizadas
+
+<div align="left">
+<img src="https://skillicons.dev/icons?i=git,github,vscode" />
+</div>
 
 - Git
 - GitHub
