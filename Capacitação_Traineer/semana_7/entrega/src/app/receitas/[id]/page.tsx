@@ -1,36 +1,65 @@
+import { recipes } from "@/src/lib/data";
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
-export default function ReceitaPage() {
+interface RecipePageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function ReceitaPage({ params }: RecipePageProps) {
+  const { id } = await params;
+  const recipe = recipes.find((recipe) => recipe.id === id);
+
+  if (!recipe) {
+    return notFound();
+  }
   return (
     <main className="grow p-8">
       <div className="container mx-auto">
         <Link
-          className=" flex text-orange-500 hover:text-orange-700 transition-colors"
+          className=" flex text-orange-500 hover:text-orange-700 transition-colors mb-6"
           href="receitas"
         >
           <ChevronLeft /> Voltar para receitas
         </Link>
+        <section className="rounded-lg overflow-hidden shadow-md">
+          <div className="relative h-96 w-full">
+            <Image
+              src={recipe.image}
+              alt={recipe.title}
+              fill
+              className="object-cover"
+            />
+          </div>
 
-        <section className="relative h-96 w-full">
-          <Image src="" alt="Titulo da receita" fill />
+          <div className=" flex flex-col gap-6 p-6">
+            <div>
+              <h1 className="text-3xl font-bold">{recipe.title}</h1>
+              <p>{recipe.description}</p>
+            </div>
+
+            <div>{/* TODO: componetnes de info */}</div>
+
+            {/* Colunas */}
+            <div className="grid grid-cols-2">
+              {/* coluna dos ingredientes */}
+              <div>
+                <h2 className="text-xl font-bold mb-4">Ingredientes</h2>
+                <ul className="list-disc list-inside space-y-2">
+                  {recipe.ingredients.map((ingredient) => (
+                    <li className="marker:text-orange-500">{ingredient}</li>
+                  ))}
+                </ul>
+              </div>
+              {/* coluna do preparo */}
+              <div>
+                <h2 className="text-xl font-bold mb-4">Modo preparo</h2>
+              </div>
+            </div>
+          </div>
         </section>
-
-        <div>
-          <h1>Titulo da receita</h1>
-          <p>descrição da receita</p>
-
-          <div>{/* TODO: componetnes de info */}</div>
-        </div>
-
-        {/* Colunas */}
-        <div>
-          {/* coluna dos ingredientes */}
-          <div></div>
-          {/* coluna do preparo */}
-          <div>{/* TODO: componete do modo de preparo */}</div>
-        </div>
       </div>
     </main>
   );
