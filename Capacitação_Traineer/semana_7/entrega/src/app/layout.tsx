@@ -37,7 +37,7 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${inter.variable} ${poppins.variable} ${dmSerif.variable} antialiased h-full`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-orange-50">
         <Header />
         {children}
         <Footer />

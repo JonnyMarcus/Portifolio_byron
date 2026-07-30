@@ -1,4 +1,5 @@
 import Infopill from "@/src/componets/infopill";
+import PreparationStep from "@/src/componets/PreparationStep";
 import { recipes } from "@/src/lib/data";
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
@@ -21,7 +22,7 @@ export default async function ReceitaPage({ params }: RecipePageProps) {
       <div className="container mx-auto">
         <Link
           className=" flex text-orange-500 hover:text-orange-700 transition-colors mb-6"
-          href="receitas"
+          href="/receitas"
         >
           <ChevronLeft /> Voltar para receitas
         </Link>
@@ -55,13 +56,24 @@ export default async function ReceitaPage({ params }: RecipePageProps) {
                 <h2 className="text-xl font-bold mb-4">Ingredientes</h2>
                 <ul className="list-disc list-inside space-y-2">
                   {recipe.ingredients.map((ingredient) => (
-                    <li className="marker:text-orange-500">{ingredient}</li>
+                    <li key={ingredient} className="marker:text-orange-500">
+                      {ingredient}
+                    </li>
                   ))}
                 </ul>
               </div>
               {/* coluna do preparo */}
               <div>
-                <h2 className="text-xl font-bold mb-4">Modo preparo</h2>
+                <h2 className="text-xl font-bold mb-4">Modo de preparo</h2>
+                <ol className="space-y-4">
+                  {recipe.instructions.map((instructions, index) => (
+                    <PreparationStep
+                      key={instructions}
+                      index={index + 1}
+                      description={instructions}
+                    />
+                  ))}
+                </ol>
               </div>
             </div>
           </div>
