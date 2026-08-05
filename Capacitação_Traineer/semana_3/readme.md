@@ -1,65 +1,24 @@
-# 🌐 Landing Page — Tailwind CSS
+# Semana 3 — Capacitação Trainee DPR | Byron Solutions
 
-Uma landing page moderna e responsiva desenvolvida com **Tailwind CSS**, aplicando a abordagem utility-first para estilização direta no HTML.
+## 📌 Sobre
 
-## 🚀 Sobre o Projeto
+Registro dos estudos da **Semana 3** da capacitação trainee da área de **Desenvolvimento de Pessoas e Resultados (DPR)** da Byron Solutions, com foco na prática de **CSS e HTML** através da criação de uma **landing page**.
 
-Este projeto foi desenvolvido durante a capacitação da EJ Byron com o objetivo de aplicar os conhecimentos adquiridos em Tailwind CSS na construção de uma interface moderna e responsiva, sem a necessidade de escrever CSS manualmente.
+## 🧱 HTML
 
----
+- Estruturação semântica da página
+- Organização de seções (header, hero, sobre, contato, footer)
 
-## 🎯 Objetivos
+## 🎨 CSS
 
-- Praticar a abordagem Utility-First;
-- Aplicar classes utilitárias diretamente no HTML;
-- Desenvolver um layout responsivo com Mobile First;
-- Criar componentes reutilizáveis (Navbar, Hero Section, Cards, Botões);
-- Consolidar os fundamentos do Tailwind CSS.
+- Estilização visual dos elementos
+- Layout com Flexbox/Grid
+- Responsividade da página
 
----
+## 🚀 Projeto prático
 
-## ✨ Funcionalidades
-
-- Página totalmente responsiva;
-- Hero Section de destaque;
-- Navbar responsiva;
-- Seções informativas;
-- Botões e cards interativos com hover e transições;
-- Design moderno e organizado.
+Aplicação dos conceitos de HTML e CSS na construção de uma **landing page** completa, unindo teoria e prática.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
-
-- HTML5
-- Tailwind CSS
-- Node.js / npm
-
----
-
-## 📂 Estrutura do Projeto
-
-```text
-📦 entrega
-│
-├── 📁 src
-│   ├── 📄 index.html
-│   ├── 🎨 input.css
-│   └── 🎨 output.css
-│
-├── 📄 package.json
-├── 📄 package-lock.json
-└── 📖 readme.md
-```
-
----
-
-## 📚 Aprendizados
-
-Durante o desenvolvimento deste projeto foram praticados conceitos importantes do Tailwind CSS, como organização de classes utilitárias, responsividade via breakpoints e criação de componentes reutilizáveis sem sair do HTML.
-
----
-
-## 👨‍💻 Autor
-
-Desenvolvido por **Jonny Marcus** durante a Capacitação Trainee da EJ Byron.
+_Byron Solutions — Junior Enterprise, UNIFEI_
