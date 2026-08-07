@@ -1,18 +1,23 @@
 "use client";
 
-import { useState } from "react";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "../../ui/dialog";
 
-export default function RecipeFormModal() {
-  const [isRecipeModalOpen, setIsRecipeModalOpen] = useState(false);
+interface RecipeFormModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export default function RecipeFormModal({
+  isOpen,
+  onClose,
+}: RecipeFormModalProps) {
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Nova receita</DialogTitle>
