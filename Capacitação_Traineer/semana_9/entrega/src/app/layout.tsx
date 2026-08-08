@@ -4,9 +4,9 @@ import "./globals.css";
 import Header from "../componets/header";
 import Footer from "../componets/footer";
 import { Poppins, DM_Serif_Display } from "next/font/google";
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -38,7 +38,15 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={cn("antialiased", "h-full", inter.variable, poppins.variable, dmSerif.variable, "font-sans", geist.variable)}
+      className={cn(
+        "antialiased",
+        "h-full",
+        inter.variable,
+        poppins.variable,
+        dmSerif.variable,
+        "font-sans",
+        geist.variable,
+      )}
     >
       <body className="min-h-full flex flex-col bg-orange-50">
         <Header />
