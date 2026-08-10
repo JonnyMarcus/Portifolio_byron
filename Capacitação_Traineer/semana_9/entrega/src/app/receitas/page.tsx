@@ -1,3 +1,5 @@
+"use client";
+
 import RecipeCards from "@/src/componets/RecipeCards";
 import RecipeFormModal from "@/src/componets/RecipeFormModal/page";
 import { recipes } from "@/src/lib/data";
