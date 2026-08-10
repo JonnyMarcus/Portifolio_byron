@@ -34,7 +34,7 @@ export default function RecipeFormModal({
   const onSubmit = (data: RecipeFormData) => {
     (console.log(data), reset(), onClose());
   };
-  const inputStyle = "p-2 border border-zinc-200 rounded-md";
+  const inputStyle = "p-2 border border-zinc-200 rounded-md grow";
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="bg-white sm:max-w-2xl">
@@ -99,7 +99,6 @@ export default function RecipeFormModal({
               <span className={styleErrors}>{errors.imageURL.message}</span>
             )}
           </div>
-          {/*  */}
           <div className="grid grid-cols-3 gap-2 items-center">
             <div className="flex flex-col gap-1">
               {/* Tempo de preparo */}
@@ -147,6 +146,52 @@ export default function RecipeFormModal({
             </div>
           </div>
 
+          {/* LIsta de ingredientes */}
+          <div className="flex flex-col gap-1">
+            <label htmlFor="ingredients">Ingredientes</label>
+            <div className="flex flex-col gap-1">
+              {/* Conteudo */}
+              <div className="flex gap-2">
+                <input type="text" className={inputStyle} />
+                <button
+                  id="ingedients"
+                  type="button"
+                  className="border border-zinc-300 bg-white rounded-md hover:bg-gray-100 transition-colors px-4 py-2 font-medium"
+                >
+                  Remover
+                </button>
+              </div>
+
+              <button
+                type="button"
+                className="border border-zinc-300 bg-white rounded-md hover:bg-gray-100 transition-colors px-4 py-2 font-medium w-fit"
+              >
+                Adicionar ingrediente
+              </button>
+            </div>
+          </div>
+          {/* Lista de intruçoes */}
+          <div className="flex flex-col gap-1">
+            <label htmlFor="instructions">Instruções</label>
+            <div className="flex flex-col gap-1">
+              {/* Conteudo */}
+              <div className="flex gap-2">
+                <textarea id="instructions" className={inputStyle} />
+                <button
+                  type="button"
+                  className="border border-zinc-300 bg-white rounded-md hover:bg-gray-100 transition-colors px-4 py-2 font-medium h-fit"
+                >
+                  Remover
+                </button>
+              </div>
+              <button
+                type="button"
+                className="border border-zinc-300 bg-white rounded-md hover:bg-gray-100 transition-colors px-4 py-2 font-medium w-fit"
+              >
+                Adicionar instrução
+              </button>
+            </div>
+          </div>
           <div className=" flex self-end gap-2">
             <button
               type="button"
