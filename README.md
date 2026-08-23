@@ -5,7 +5,8 @@
 **Soluções digitais, capacitações e desenvolvimento pessoal construídos durante a trajetória na EJ byron**
 
 <p>
-  <img src="https://skillicons.dev/icons?i=git,github,html,css,tailwind,js,ts,react,nextjs,nodejs,strapi,python,flutter,figma,vscode" />
+  <img src="https://skillicons.dev/icons?i=git,github,html,css,tailwind,js,ts,react,nextjs,nodejs,python,flutter,figma,vscode" />
+  <img src="https://cdn.simpleicons.org/strapi" height="48" alt="Strapi" />
 </p>
 
 </div>
