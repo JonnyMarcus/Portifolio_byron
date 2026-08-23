@@ -1,4 +1,4 @@
-import { FormState, useFieldArray, useForm } from "react-hook-form";
+import { useFieldArray, useForm } from "react-hook-form";
 import {
   Dialog,
   DialogContent,
@@ -12,16 +12,18 @@ import {
 } from "@/src/lib/formsValidationSchemas/recipeSchemas/recipeSchema";
 import { ArrowDownToLine } from "lucide-react";
 import { useRef, useState } from "react";
+import { Recipe } from "@/src/lib/data";
 
 interface RecipeFormModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onSave: (recipe: Omit<Recipe, "id">) => void;
 }
 const DEFAULT_VALUES: RecipeFormData = {
   title: "",
   category: "",
   description: "",
-  imageURL: "",
+  image: "",
   prepTime: "",
   cookTime: "",
   servings: 1,
@@ -32,6 +34,7 @@ const DEFAULT_VALUES: RecipeFormData = {
 export default function RecipeFormModal({
   isOpen,
   onClose,
+  onSave,
 }: RecipeFormModalProps) {
   const styleErrors = "text-sm text-red-500";
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
@@ -70,7 +73,11 @@ export default function RecipeFormModal({
       ingredients: data.ingredients.map((ingredient) => ingredient.value),
       instructions: data.instructions.map((instruction) => instruction.value),
     };
-    (console.log(recipeData), reset(), setPreviewUrl(null), onClose());
+    (console.log(recipeData),
+      onSave(recipeData),
+      reset(),
+      setPreviewUrl(null),
+      onClose());
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -79,12 +86,12 @@ export default function RecipeFormModal({
 
     const url = URL.createObjectURL(file);
     setPreviewUrl(url);
-    setValue("imageURL", url, { shouldValidate: true });
+    setValue("image", url, { shouldValidate: true });
   };
 
   const handleRemoveImage = () => {
     setPreviewUrl(null);
-    setValue("imageURL", "", { shouldValidate: true });
+    setValue("image", "", { shouldValidate: true });
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }
@@ -150,7 +157,7 @@ export default function RecipeFormModal({
                 className={inputStyle}
                 id="imageUrl"
                 placeholder="/imagem.svg"
-                {...register("imageURL")}
+                {...register("image")}
               />
               <input
                 ref={fileInputRef}
@@ -183,8 +190,8 @@ export default function RecipeFormModal({
                 </button>
               </div>
             )}
-            {errors.imageURL && (
-              <span className={styleErrors}>{errors.imageURL.message}</span>
+            {errors.image && (
+              <span className={styleErrors}>{errors.image.message}</span>
             )}
           </div>
           <div className="grid grid-cols-3 gap-2 items-start">
