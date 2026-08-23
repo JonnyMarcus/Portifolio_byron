@@ -4,7 +4,7 @@ export const recipeSchema = yup.object().shape({
   title: yup.string().required("O titulo é obrigatorio"),
   category: yup.string().required("A categoria é obrigatorio"),
   description: yup.string().required("A descrição é obrigatorio"),
-  imageURL: yup.string().required("A URL imagem é Obrigatoria"),
+  image: yup.string().required("A URL imagem é Obrigatoria"),
   prepTime: yup.string().required("O tempo De preparo é obrigatorio"),
   cookTime: yup.string().required("o tempo de cozimento é obrigatorio"),
   servings: yup

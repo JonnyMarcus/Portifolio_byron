@@ -1,4 +1,4 @@
-import { FormState, useFieldArray, useForm } from "react-hook-form";
+import { useFieldArray, useForm } from "react-hook-form";
 import {
   Dialog,
   DialogContent,
@@ -12,16 +12,18 @@ import {
 } from "@/src/lib/formsValidationSchemas/recipeSchemas/recipeSchema";
 import { ArrowDownToLine } from "lucide-react";
 import { useRef, useState } from "react";
+import { Recipe } from "@/src/lib/data";
 
 interface RecipeFormModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onSave: (recipe: Omit<Recipe, "id">) => void;
 }
 const DEFAULT_VALUES: RecipeFormData = {
   title: "",
   category: "",
   description: "",
-  imageURL: "",
+  image: "",
   prepTime: "",
   cookTime: "",
   servings: 1,
@@ -32,6 +34,7 @@ const DEFAULT_VALUES: RecipeFormData = {
 export default function RecipeFormModal({
   isOpen,
   onClose,
+  onSave,
 }: RecipeFormModalProps) {
   const styleErrors = "text-sm text-red-500";
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
@@ -65,7 +68,16 @@ export default function RecipeFormModal({
     name: "instructions",
   });
   const onSubmit = (data: RecipeFormData) => {
-    (console.log(data), reset(), setPreviewUrl(null), onClose());
+    const recipeData = {
+      ...data,
+      ingredients: data.ingredients.map((ingredient) => ingredient.value),
+      instructions: data.instructions.map((instruction) => instruction.value),
+    };
+    (console.log(recipeData),
+      onSave(recipeData),
+      reset(),
+      setPreviewUrl(null),
+      onClose());
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,12 +86,12 @@ export default function RecipeFormModal({
 
     const url = URL.createObjectURL(file);
     setPreviewUrl(url);
-    setValue("imageURL", url, { shouldValidate: true });
+    setValue("image", url, { shouldValidate: true });
   };
 
   const handleRemoveImage = () => {
     setPreviewUrl(null);
-    setValue("imageURL", "", { shouldValidate: true });
+    setValue("image", "", { shouldValidate: true });
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }
@@ -88,7 +100,7 @@ export default function RecipeFormModal({
   const inputStyle = "p-2 border border-zinc-200 rounded-md grow";
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="bg-white sm:max-w-2xl ">
+      <DialogContent className="bg-white sm:max-w-2xl max-h-[85vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Nova receita</DialogTitle>
         </DialogHeader>
@@ -145,7 +157,7 @@ export default function RecipeFormModal({
                 className={inputStyle}
                 id="imageUrl"
                 placeholder="/imagem.svg"
-                {...register("imageURL")}
+                {...register("image")}
               />
               <input
                 ref={fileInputRef}
@@ -178,11 +190,11 @@ export default function RecipeFormModal({
                 </button>
               </div>
             )}
-            {errors.imageURL && (
-              <span className={styleErrors}>{errors.imageURL.message}</span>
+            {errors.image && (
+              <span className={styleErrors}>{errors.image.message}</span>
             )}
           </div>
-          <div className="grid grid-cols-3 gap-2 items-center">
+          <div className="grid grid-cols-3 gap-2 items-start">
             <div className="flex flex-col gap-1">
               {/* Tempo de preparo */}
               <label htmlFor="PrepTime">Tempo de preparo</label>
@@ -235,22 +247,29 @@ export default function RecipeFormModal({
             <div className="flex flex-col gap-1">
               {/* Conteudo */}
               {ingredientsFields.map((field, index) => (
-                <div key={field.id} className="flex gap-2">
-                  <input
-                    type="text"
-                    placeholder="Digite um ingrediente"
-                    className={inputStyle}
-                    {...register(`ingredients.${index}.value`)}
-                  />
-                  {ingredientsFields.length > 1 && (
-                    <button
-                      id="ingedients"
-                      type="button"
-                      className="border border-zinc-300 bg-white rounded-md hover:bg-gray-100 transition-colors px-4 py-2 font-medium"
-                      onClick={() => removeIngredients(index)}
-                    >
-                      Remover
-                    </button>
+                <div key={field.id} className="flex flex-col gap-1">
+                  <div className="flex gap-2">
+                    <input
+                      type="text"
+                      placeholder="Digite um ingrediente"
+                      className={inputStyle}
+                      {...register(`ingredients.${index}.value`)}
+                    />
+                    {ingredientsFields.length > 1 && (
+                      <button
+                        id="ingedients"
+                        type="button"
+                        className="border border-zinc-300 bg-white rounded-md hover:bg-gray-100 transition-colors px-4 py-2 font-medium"
+                        onClick={() => removeIngredients(index)}
+                      >
+                        Remover
+                      </button>
+                    )}
+                  </div>
+                  {errors.ingredients?.[index]?.value && (
+                    <span className={styleErrors}>
+                      {errors.ingredients[index]?.value?.message}
+                    </span>
                   )}
                 </div>
               ))}
@@ -270,21 +289,28 @@ export default function RecipeFormModal({
             <div className="flex flex-col gap-1">
               {/* Conteudo */}
               {instructionsFields.map((field, index) => (
-                <div key={field.id} className="flex gap-2">
-                  <textarea
-                    id="instructions"
-                    placeholder="Digite uma instrução"
-                    className={inputStyle}
-                    {...register(`instructions.${index}.value`)}
-                  />
-                  {instructionsFields.length > 1 && (
-                    <button
-                      type="button"
-                      className="border border-zinc-300 bg-white rounded-md hover:bg-gray-100 transition-colors px-4 py-2 font-medium h-fit"
-                      onClick={() => removeInstructions(index)}
-                    >
-                      Remover
-                    </button>
+                <div key={field.id} className="flex flex-col gap-1">
+                  <div className="flex gap-2">
+                    <textarea
+                      id="instructions"
+                      placeholder="Digite uma instrução"
+                      className={inputStyle}
+                      {...register(`instructions.${index}.value`)}
+                    />
+                    {instructionsFields.length > 1 && (
+                      <button
+                        type="button"
+                        className="border border-zinc-300 bg-white rounded-md hover:bg-gray-100 transition-colors px-4 py-2 font-medium h-fit"
+                        onClick={() => removeInstructions(index)}
+                      >
+                        Remover
+                      </button>
+                    )}
+                  </div>
+                  {errors.instructions?.[index]?.value && (
+                    <span className={styleErrors}>
+                      {errors.instructions[index]?.value?.message}
+                    </span>
                   )}
                 </div>
               ))}
