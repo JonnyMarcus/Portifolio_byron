@@ -2,14 +2,14 @@
 
 import RecipeCards from "@/src/componets/RecipeCards";
 import RecipeFormModal from "@/src/componets/RecipeFormModal/page";
-import { recipes as initialRecipes } from "@/src/lib/data";
 import { Plus } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Recipe } from "@/src/lib/data";
+import api from "@/src/lib/api";
 
 export default function ReceitasPage() {
   const [isRecipeModalOpen, setIsRecipeModalOpen] = useState(false);
-  const [recipes, setRecipes] = useState<Recipe[]>(initialRecipes);
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
 
   const handleCreateRecipe = (recipeData: Omit<Recipe, "id">) => {
     const newRecipe: Recipe = {
@@ -18,6 +18,20 @@ export default function ReceitasPage() {
     };
     setRecipes((prev) => [...prev, newRecipe]);
   };
+  useEffect(() => {
+    const fetchRecipe = async () => {
+      try {
+        const response = await api.get("/recipes");
+
+        setRecipes(response.data);
+      } catch (error) {
+        console.log("Error ao requisitar as receitas", error);
+      }
+
+      fetchRecipe();
+    };
+  }, []);
+
   return (
     <main className=" grow py-8">
       <div className="container mx-auto">
