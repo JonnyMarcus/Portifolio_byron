@@ -11,7 +11,7 @@ export default function ReceitasPage() {
   const [isRecipeModalOpen, setIsRecipeModalOpen] = useState(false);
   const [recipes, setRecipes] = useState<Recipe[]>([]);
 
-  const handleCreateRecipe = (recipeData: Omit<Recipe, "id">) => {
+  const handleCreateRecipe = async (recipeData: Omit<Recipe, "id">) => {
     const newRecipe: Recipe = {
       ...recipeData,
       id: (recipes.length + 1).toString(),
