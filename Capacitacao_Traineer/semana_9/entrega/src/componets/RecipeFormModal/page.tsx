@@ -1,3 +1,5 @@
+"use client";
+
 import { useFieldArray, useForm } from "react-hook-form";
 import {
   Dialog,
@@ -10,7 +12,7 @@ import {
   RecipeFormData,
   recipeSchema,
 } from "@/src/lib/formsValidationSchemas/recipeSchemas/recipeSchema";
-import { ArrowDownToLine } from "lucide-react";
+import { ArrowDownToLine, Plus, Trash2 } from "lucide-react";
 import { useRef, useState } from "react";
 import { Recipe } from "@/src/lib/data";
 
@@ -19,6 +21,7 @@ interface RecipeFormModalProps {
   onClose: () => void;
   onSave: (recipe: Omit<Recipe, "id">) => void;
 }
+
 const DEFAULT_VALUES: RecipeFormData = {
   title: "",
   category: "",
@@ -36,9 +39,10 @@ export default function RecipeFormModal({
   onClose,
   onSave,
 }: RecipeFormModalProps) {
-  const styleErrors = "text-sm text-red-500";
+  const styleErrors = "text-xs text-red-500 mt-0.5";
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
   const {
     register,
     reset,
@@ -51,6 +55,7 @@ export default function RecipeFormModal({
     mode: "onSubmit",
     defaultValues: DEFAULT_VALUES,
   });
+
   const {
     fields: ingredientsFields,
     append: appendIngredients,
@@ -59,6 +64,7 @@ export default function RecipeFormModal({
     control,
     name: "ingredients",
   });
+
   const {
     fields: instructionsFields,
     append: appendInstructions,
@@ -67,17 +73,17 @@ export default function RecipeFormModal({
     control,
     name: "instructions",
   });
+
   const onSubmit = (data: RecipeFormData) => {
     const recipeData = {
       ...data,
       ingredients: data.ingredients.map((ingredient) => ingredient.value),
       instructions: data.instructions.map((instruction) => instruction.value),
     };
-    (console.log(recipeData),
-      onSave(recipeData),
-      reset(),
-      setPreviewUrl(null),
-      onClose());
+    onSave(recipeData);
+    reset();
+    setPreviewUrl(null);
+    onClose();
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -97,66 +103,77 @@ export default function RecipeFormModal({
     }
   };
 
-  const inputStyle = "p-2 border border-zinc-200 rounded-md grow";
+  const inputStyle =
+    "p-2.5 border border-zinc-300 rounded-lg text-sm outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 w-full";
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="bg-white sm:max-w-2xl max-h-[85vh] overflow-y-auto">
+      <DialogContent className="bg-white w-[95vw] sm:max-w-2xl max-h-[90vh] overflow-y-auto p-4 sm:p-6 rounded-xl">
         <DialogHeader>
-          <DialogTitle>Nova receita</DialogTitle>
+          <DialogTitle className="text-xl font-bold text-stone-900">
+            Cadastrar Nova Receita
+          </DialogTitle>
         </DialogHeader>
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col gap-4 w-full"
-        >
-          <div className="grid grid-cols-2 gap-2">
+
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-full mt-2">
+          {/* Título e Categoria responsivos */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div className="flex flex-col gap-1">
-              {/* Titulo */}
-              <label htmlFor="Titulo">Titulo</label>
+              <label htmlFor="title" className="text-xs font-semibold text-stone-700">
+                Título da receita *
+              </label>
               <input
                 className={inputStyle}
                 type="text"
                 id="title"
+                placeholder="Ex: Torta de Limão"
                 {...register("title")}
               />
-              {errors.title && (
-                <span className={styleErrors}>{errors.title.message}</span>
-              )}
+              {errors.title && <span className={styleErrors}>{errors.title.message}</span>}
             </div>
+
             <div className="flex flex-col gap-1">
-              {/* Categoria */}
-              <label htmlFor="Category">Categoria</label>
+              <label htmlFor="category" className="text-xs font-semibold text-stone-700">
+                Categoria *
+              </label>
               <input
                 className={inputStyle}
                 type="text"
                 id="category"
+                placeholder="Ex: Sobremesas, Pratos Principais"
                 {...register("category")}
               />
-              {errors.category && (
-                <span className={styleErrors}>{errors.category.message}</span>
-              )}
+              {errors.category && <span className={styleErrors}>{errors.category.message}</span>}
             </div>
           </div>
+
           {/* Descrição */}
           <div className="flex flex-col gap-1">
-            <label htmlFor="description">Descrição</label>
+            <label htmlFor="description" className="text-xs font-semibold text-stone-700">
+              Descrição breve *
+            </label>
             <textarea
-              className={inputStyle}
+              className={`${inputStyle} min-h-[70px] resize-y`}
               id="description"
+              placeholder="Descreva a receita em poucas palavras..."
               {...register("description")}
             />
             {errors.description && (
               <span className={styleErrors}>{errors.description.message}</span>
             )}
           </div>
+
+          {/* Imagem */}
           <div className="flex flex-col gap-1">
-            {/* URl imagem */}
-            <label htmlFor="imageUrl">URL da imagem</label>
+            <label htmlFor="imageUrl" className="text-xs font-semibold text-stone-700">
+              URL da imagem ou upload
+            </label>
             <div className="flex gap-2">
               <input
                 type="text"
                 className={inputStyle}
                 id="imageUrl"
-                placeholder="/imagem.svg"
+                placeholder="/receitas/bolo-chocolate.png ou link web"
                 {...register("image")}
               />
               <input
@@ -169,50 +186,52 @@ export default function RecipeFormModal({
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="border border-zinc-300 bg-white rounded-md hover:bg-gray-100 transition-colors px-4 py-2 font-medium"
+                className="border border-zinc-300 bg-stone-50 rounded-lg hover:bg-stone-100 transition-colors px-3 py-2 cursor-pointer flex items-center justify-center shrink-0"
+                title="Carregar arquivo de imagem"
               >
-                <ArrowDownToLine />
+                <ArrowDownToLine className="w-5 h-5 text-stone-600" />
               </button>
             </div>
+
             {previewUrl && (
-              <div className="mt-1 flex items-center gap-2">
+              <div className="mt-2 flex items-center gap-3">
                 <img
                   src={previewUrl}
                   alt="Pré-visualização"
-                  className="w-32 h-32 object-cover rounded-md border border-zinc-200"
+                  className="w-20 h-20 object-cover rounded-lg border border-zinc-200"
                 />
                 <button
                   type="button"
                   onClick={handleRemoveImage}
-                  className="border border-zinc-300 bg-white rounded-md hover:bg-gray-100 transition-colors px-4 py-2 font-medium h-fit"
+                  className="text-xs text-red-600 hover:text-red-800 underline cursor-pointer"
                 >
                   Remover imagem
                 </button>
               </div>
             )}
-            {errors.image && (
-              <span className={styleErrors}>{errors.image.message}</span>
-            )}
+            {errors.image && <span className={styleErrors}>{errors.image.message}</span>}
           </div>
-          <div className="grid grid-cols-3 gap-2 items-start">
+
+          {/* Tempos e Porções em Grid Responsivo */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div className="flex flex-col gap-1">
-              {/* Tempo de preparo */}
-              <label htmlFor="PrepTime">Tempo de preparo</label>
+              <label htmlFor="prepTime" className="text-xs font-semibold text-stone-700">
+                Preparo *
+              </label>
               <input
                 className={inputStyle}
                 type="text"
-                id="PrepTime"
+                id="prepTime"
                 placeholder="15 minutos"
                 {...register("prepTime")}
               />
-              {errors.prepTime && (
-                <span className={styleErrors}>{errors.prepTime.message}</span>
-              )}
+              {errors.prepTime && <span className={styleErrors}>{errors.prepTime.message}</span>}
             </div>
 
             <div className="flex flex-col gap-1">
-              {/* Tempo de cozimento */}
-              <label htmlFor="cookTime">Tempo de cozimento</label>
+              <label htmlFor="cookTime" className="text-xs font-semibold text-stone-700">
+                Cozimento *
+              </label>
               <input
                 className={inputStyle}
                 type="text"
@@ -220,49 +239,46 @@ export default function RecipeFormModal({
                 placeholder="30 minutos"
                 {...register("cookTime")}
               />
-              {errors.cookTime && (
-                <span className={styleErrors}>{errors.cookTime.message}</span>
-              )}
+              {errors.cookTime && <span className={styleErrors}>{errors.cookTime.message}</span>}
             </div>
 
             <div className="flex flex-col gap-1">
-              {/* Porções */}
-              <label htmlFor="Servings">Porções</label>
+              <label htmlFor="servings" className="text-xs font-semibold text-stone-700">
+                Porções *
+              </label>
               <input
                 className={inputStyle}
                 type="number"
                 id="servings"
+                min={1}
                 defaultValue={1}
                 {...register("servings")}
               />
-              {errors.servings && (
-                <span className={styleErrors}>{errors.servings.message}</span>
-              )}
+              {errors.servings && <span className={styleErrors}>{errors.servings.message}</span>}
             </div>
           </div>
 
-          {/* LIsta de ingredientes */}
-          <div className="flex flex-col gap-1">
-            <label htmlFor="ingredients">Ingredientes</label>
-            <div className="flex flex-col gap-1">
-              {/* Conteudo */}
+          {/* Ingredientes */}
+          <div className="flex flex-col gap-1 mt-1">
+            <label className="text-xs font-semibold text-stone-700">Ingredientes *</label>
+            <div className="flex flex-col gap-2">
               {ingredientsFields.map((field, index) => (
                 <div key={field.id} className="flex flex-col gap-1">
                   <div className="flex gap-2">
                     <input
                       type="text"
-                      placeholder="Digite um ingrediente"
+                      placeholder={`Ingrediente ${index + 1}`}
                       className={inputStyle}
                       {...register(`ingredients.${index}.value`)}
                     />
                     {ingredientsFields.length > 1 && (
                       <button
-                        id="ingedients"
                         type="button"
-                        className="border border-zinc-300 bg-white rounded-md hover:bg-gray-100 transition-colors px-4 py-2 font-medium"
+                        className="p-2.5 text-stone-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors cursor-pointer shrink-0"
                         onClick={() => removeIngredients(index)}
+                        title="Remover ingrediente"
                       >
-                        Remover
+                        <Trash2 size={16} />
                       </button>
                     )}
                   </div>
@@ -276,34 +292,34 @@ export default function RecipeFormModal({
 
               <button
                 type="button"
-                className="border border-zinc-300 bg-white rounded-md hover:bg-gray-100 transition-colors px-4 py-2 font-medium w-fit"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-orange-600 hover:text-orange-800 transition-colors py-1 cursor-pointer w-fit"
                 onClick={() => appendIngredients({ value: "" })}
               >
-                Adicionar ingrediente
+                <Plus size={14} /> Adicionar ingrediente
               </button>
             </div>
           </div>
-          {/* Lista de intruçoes */}
-          <div className="flex flex-col gap-1">
-            <label htmlFor="instructions">Instruções</label>
-            <div className="flex flex-col gap-1">
-              {/* Conteudo */}
+
+          {/* Instruções */}
+          <div className="flex flex-col gap-1 mt-1">
+            <label className="text-xs font-semibold text-stone-700">Modo de preparo *</label>
+            <div className="flex flex-col gap-2">
               {instructionsFields.map((field, index) => (
                 <div key={field.id} className="flex flex-col gap-1">
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 items-start">
                     <textarea
-                      id="instructions"
-                      placeholder="Digite uma instrução"
-                      className={inputStyle}
+                      placeholder={`Passo ${index + 1}`}
+                      className={`${inputStyle} min-h-[50px] resize-y`}
                       {...register(`instructions.${index}.value`)}
                     />
                     {instructionsFields.length > 1 && (
                       <button
                         type="button"
-                        className="border border-zinc-300 bg-white rounded-md hover:bg-gray-100 transition-colors px-4 py-2 font-medium h-fit"
+                        className="p-2.5 text-stone-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors cursor-pointer shrink-0 mt-1"
                         onClick={() => removeInstructions(index)}
+                        title="Remover passo"
                       >
-                        Remover
+                        <Trash2 size={16} />
                       </button>
                     )}
                   </div>
@@ -317,26 +333,28 @@ export default function RecipeFormModal({
 
               <button
                 type="button"
-                className="border border-zinc-300 bg-white rounded-md hover:bg-gray-100 transition-colors px-4 py-2 font-medium w-fit"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-orange-600 hover:text-orange-800 transition-colors py-1 cursor-pointer w-fit"
                 onClick={() => appendInstructions({ value: "" })}
               >
-                Adicionar instrução
+                <Plus size={14} /> Adicionar instrução
               </button>
             </div>
           </div>
-          <div className=" flex self-end gap-2">
+
+          {/* Botões de Ação */}
+          <div className="flex justify-end gap-3 mt-4 pt-3 border-t border-slate-100">
             <button
               type="button"
               onClick={onClose}
-              className="border border-zinc-300 bg-white rounded-md hover:bg-gray-100 transition-colors px-4 py-2 font-medium"
+              className="px-4 py-2 text-sm font-medium text-stone-600 hover:bg-stone-100 rounded-lg transition-colors cursor-pointer"
             >
               Cancelar
             </button>
             <button
               type="submit"
-              className="bg-black px-4 py-2 text-white rounded-md  hover:bg-gray-800 transition-colors font-medium "
+              className="px-5 py-2 text-sm font-bold bg-orange-600 text-white hover:bg-orange-700 rounded-lg transition-colors cursor-pointer shadow-xs"
             >
-              Criar receita
+              Salvar Receita
             </button>
           </div>
         </form>
